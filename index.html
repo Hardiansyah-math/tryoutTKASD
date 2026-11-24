@@ -1,206 +1,804 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CBT Matematika Kelas VI</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>CBT Tryout TKA Matematika SD — Soal Baru</title>
 <style>
-:root{--ink:#1E2A4A;--blue:#2D5BE3;--sun:#FFC83D;--mint:#1FA88A;--coral:#EF5B6E;--paper:#F6F8FC;--line:#DCE3F2;--mut:#5b678a;--card:#fff}
+:root{
+  --bg:#f4f6f3; --surface:#ffffff; --surface2:#eef3ee; --ink:#1c2b26; --ink2:#4c5f57;
+  --line:#d7e0d8; --teal:#0f6a5c; --teal-dark:#0a4f44; --teal-soft:#e2f0eb;
+  --amber:#e8a020; --amber-soft:#fdf0d5; --red:#c0392b; --red-soft:#fbeae7;
+  --green:#1e7d46; --green-soft:#e3f2e7; --blue:#2563a8; --blue-soft:#e6eff8;
+  --shadow:0 2px 10px rgba(20,50,40,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#101613; --surface:#1a221e; --surface2:#222b26; --ink:#e8efe9; --ink2:#a9bcb1;
+    --line:#33413a; --teal:#3dbfa5; --teal-dark:#7fd8c3; --teal-soft:#173a32;
+    --amber:#f0b84a; --amber-soft:#3d3013; --red:#f08a7d; --red-soft:#42231e;
+    --green:#6fce92; --green-soft:#1d3526; --blue:#7db3e8; --blue-soft:#1d2f42;
+    --shadow:0 2px 10px rgba(0,0,0,.35);
+  }
+}
 *{box-sizing:border-box}
-body{margin:0;font:16px/1.55 "Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
-.grid{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px}
-.fr{display:inline-block;vertical-align:middle;text-align:center;font-size:.85em;line-height:1.15;margin:0 2px}
-.fr .n{display:block;border-bottom:1.5px solid currentColor;padding:0 3px}.fr .d{display:block}
-button{font:inherit;cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-.hide{display:none!important}
-.wrap{max-width:1040px;margin:0 auto;padding:16px}
-.login{min-height:100vh;display:grid;place-items:center;padding:16px}
-.lcard{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:28px;width:100%;max-width:440px;box-shadow:6px 6px 0 var(--sun)}
-.lcard h1{font-size:1.7rem;line-height:1.15;margin:0 0 6px}.lcard p{margin:0 0 14px;color:var(--mut)}
-label.f{display:block;font-weight:700;margin:12px 0 4px}
-input[type=text],select{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
-input[type=text]:focus,select:focus{border-color:var(--blue)}
-.btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:11px 20px;font-weight:700}
-.btn.sec{background:#fff;color:var(--ink);border:2px solid var(--line)}.btn.go{background:var(--ink);width:100%;margin-top:18px;padding:13px}
-.rules{margin:14px 0 0;padding-left:20px;color:var(--mut);font-size:.92rem}
-.err{color:#b3283a;font-weight:700;margin-top:10px;min-height:1.4em}
-.top{position:sticky;top:0;z-index:5;background:var(--ink);color:#fff}
-.top .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 16px}
-.who{font-weight:700;line-height:1.2}.who small{display:block;font-weight:400;color:#C9D4F0}
-.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:1.25rem;background:var(--sun);color:var(--ink);padding:4px 14px;border-radius:20px}.timer.low{background:var(--coral);color:#fff}
-.layout{display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:start}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;color:var(--mut);font-size:.9rem}
-.chip{color:#fff;font-weight:700;font-size:.8rem;border-radius:12px;padding:2px 10px}
-.qno{font-weight:700;font-size:1.05rem}
-.qt{font-size:1.15rem;margin:6px 0 16px}
-.pet{font-size:.88rem;color:var(--mut);font-style:italic;margin-bottom:6px}
-.opt{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:12px;padding:11px 14px;margin-bottom:10px;cursor:pointer;background:#fff}
-.opt:hover{border-color:#9db3f2}.opt.on{border-color:var(--blue);background:#EAF0FF}
-.opt input{margin-top:5px;accent-color:var(--blue)}.opt b{color:var(--blue);min-width:1.2em}
-.bsr{display:flex;gap:12px}.bsr .opt{flex:1;justify-content:center;font-weight:700;font-size:1.05rem}
-.pool{display:flex;flex-wrap:wrap;gap:8px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px;margin-bottom:12px}
-.pool span{background:#fff;border:1px solid var(--line);border-radius:8px;padding:3px 12px}.pool b{color:var(--blue)}
-.act{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
-.flag.on{background:var(--sun);border-color:var(--sun)}
-.nav{position:sticky;top:70px}
-.nav h3{margin:0 0 8px;font-size:.95rem}
-.ng{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-.ng button{border:2px solid var(--line);background:#fff;border-radius:8px;padding:6px 0;font-weight:700;color:var(--ink)}
-.ng button.a{background:var(--blue);border-color:var(--blue);color:#fff}.ng button.g{background:var(--sun);border-color:var(--sun);color:var(--ink)}.ng button.c{box-shadow:0 0 0 3px var(--ink)}
-.lg{font-size:.8rem;color:var(--mut);margin-top:10px}
-.score{text-align:center;padding:28px 16px}
-.big{font-size:4.5rem;font-weight:800;line-height:1;color:var(--blue)}
-.sub{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:18px 0}
-.sub div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px}.sub b{font-size:1.2rem;display:block}
-.rv{border-left:5px solid var(--line);padding:10px 14px;margin:12px 0;background:#fff;border-radius:0 10px 10px 0}
-.rv.ok{border-color:var(--mint)}.rv.no{border-color:var(--coral)}.rv .pm{background:var(--paper);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:.95rem}
-@media(max-width:820px){.layout{grid-template-columns:1fr}.nav{position:static;order:2}.big{font-size:3.4rem}}
-@media print{.top,.noprint{display:none!important}body{background:#fff}}
-@media(prefers-reduced-motion:no-preference){.opt{transition:border-color .12s,background .12s}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.55}
+a{overflow-wrap:anywhere}
+button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3{line-height:1.2;margin:0}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px 64px}
+.topband{background:var(--teal-dark);color:#fff;padding:26px 0 22px;margin-bottom:22px}
+@media (prefers-color-scheme: dark){.topband{background:#0d2c26}}
+.topband .wrap{padding-bottom:0}
+.topband .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 6px}
+.topband h1{font-family:Georgia,"Times New Roman",serif;font-weight:900;font-size:clamp(1.55rem,4.5vw,2.3rem);margin:0 0 8px}
+.topband p{margin:0;color:#d8ece5;max-width:640px;font-size:.98rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:999px;padding:5px 12px;font-size:.83rem;font-weight:600}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
+.card h2{font-size:1.18rem;margin-bottom:10px}
+label.flabel{display:block;font-weight:700;font-size:.9rem;margin:14px 0 6px}
+input[type=text],select{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:1rem}
+input[type=text]:focus,select:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.petunjuk{border:2px solid var(--blue);background:var(--blue-soft);border-radius:12px;padding:14px 16px;margin:16px 0}
+.petunjuk h3{color:var(--blue);font-size:1rem;margin-bottom:8px}
+.petunjuk ol{margin:0;padding-left:4px;list-style:none;counter-reset:pt}
+.petunjuk li{counter-increment:pt;display:flex;gap:10px;margin:7px 0;font-size:.95rem}
+.petunjuk li::before{content:counter(pt);flex:0 0 24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.cek{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:16px 0;font-size:.95rem}
+.cek input{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--teal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:10px;padding:11px 20px;font-size:1rem;font-weight:700;min-height:48px}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:disabled{background:var(--line);color:var(--ink2);cursor:not-allowed}
+.btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+.btn-amber{background:var(--amber);color:#231a02}
+.btn-danger{background:var(--red);color:#fff}
+.btn-sm{padding:8px 14px;min-height:40px;font-size:.9rem}
+.hidden{display:none!important}
+/* ===== Exam layout ===== */
+.examhead{position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:2px solid var(--line);padding:10px 0;margin-bottom:16px}
+.examhead .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.who{font-weight:700;font-size:.95rem}
+.who span{color:var(--ink2);font-weight:500}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:1.25rem;background:var(--teal-soft);color:var(--teal-dark);border-radius:10px;padding:6px 14px;border:1.5px solid var(--teal)}
+@media (prefers-color-scheme: dark){.timer{color:var(--teal)}}
+.timer.warn{background:var(--amber-soft);color:#8a5c00;border-color:var(--amber)}
+@media (prefers-color-scheme: dark){.timer.warn{color:var(--amber)}}
+.timer.danger{background:var(--red-soft);color:var(--red);border-color:var(--red)}
+.progressbar{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-top:8px}
+.progressbar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.examgrid{display:grid;grid-template-columns:1fr 264px;gap:18px;align-items:start}
+@media (max-width:820px){.examgrid{grid-template-columns:1fr}}
+.qmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.badge{font-size:.75rem;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--teal-soft);color:var(--teal-dark)}
+@media (prefers-color-scheme: dark){.badge{color:var(--teal)}}
+.badge.type{background:var(--amber-soft);color:#8a5c00}
+@media (prefers-color-scheme: dark){.badge.type{color:var(--amber)}}
+.qstem{font-size:1.04rem}
+.qstem p{margin:0 0 10px}
+.qstem table.data{border-collapse:collapse;margin:10px 0;font-size:.95rem}
+.qstem table.data th,.qstem table.data td{border:1px solid var(--line);padding:7px 12px;text-align:left}
+.qstem table.data th{background:var(--surface2)}
+.figbox{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;text-align:center;overflow-x:auto}
+.figbox svg{max-width:100%;height:auto}
+.figcap{font-size:.85rem;color:var(--ink2);margin-top:6px}
+.opts{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;background:var(--surface);min-height:48px}
+.opt:hover{border-color:var(--teal)}
+.opt input{width:20px;height:20px;margin-top:2px;flex:0 0 20px;accent-color:var(--teal)}
+.opt.sel{border-color:var(--teal);background:var(--teal-soft)}
+.opt .huruf{font-weight:800;color:var(--teal-dark);flex:0 0 20px}
+@media (prefers-color-scheme: dark){.opt .huruf{color:var(--teal)}}
+table.bs{width:100%;border-collapse:collapse;margin-top:14px;font-size:.96rem}
+table.bs th,table.bs td{border:1px solid var(--line);padding:9px 10px}
+table.bs th{background:var(--surface2);text-align:center}
+table.bs td.c{text-align:center;width:76px}
+table.bs td.c label{display:flex;align-items:center;justify-content:center;min-height:36px;cursor:pointer}
+table.bs input{width:20px;height:20px;accent-color:var(--teal)}
+.qnav{display:flex;flex-wrap:wrap;gap:9px;justify-content:space-between;margin-top:18px}
+.qnav .mid{display:flex;align-items:center}
+label.ragu{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:.93rem;cursor:pointer;padding:8px 4px;min-height:40px}
+label.ragu input{width:19px;height:19px;accent-color:var(--amber)}
+.navpanel{position:sticky;top:86px}
+@media (max-width:820px){.navpanel{position:static}}
+.navgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}
+.navbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;font-weight:700;font-size:.92rem;min-height:42px;padding:4px 0;position:relative}
+.navbtn.done{background:var(--teal);border-color:var(--teal);color:#fff}
+.navbtn.ragu{box-shadow:inset 0 -5px 0 var(--amber)}
+.navbtn.now{outline:3px solid var(--amber);outline-offset:1px}
+.legend{font-size:.8rem;color:var(--ink2);margin-top:10px;line-height:1.9}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:4px;vertical-align:-2px;margin-right:5px;border:1.5px solid var(--line)}
+.legend .lg-done{background:var(--teal);border-color:var(--teal)}
+.legend .lg-ragu{background:var(--surface);box-shadow:inset 0 -5px 0 var(--amber)}
+.legend .lg-now{background:var(--surface);outline:2px solid var(--amber)}
+/* ===== Modal ===== */
+.modalback{position:fixed;inset:0;background:rgba(10,25,20,.55);display:flex;align-items:center;justify-content:center;z-index:60;padding:16px}
+.modal{background:var(--surface);border-radius:14px;max-width:460px;width:100%;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.modal h3{margin-bottom:8px}
+.modal .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+/* ===== Result ===== */
+.scorebig{font-family:Georgia,"Times New Roman",serif;font-size:3.4rem;font-weight:900;color:var(--teal-dark);line-height:1}
+@media (prefers-color-scheme: dark){.scorebig{color:var(--teal)}}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.stat{background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:12px;text-align:center}
+.stat b{display:block;font-size:1.35rem}
+.stat span{font-size:.82rem;color:var(--ink2)}
+.reviewitem{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;background:var(--surface)}
+.reviewitem.ok{border-left:6px solid var(--green)}
+.reviewitem.part{border-left:6px solid var(--amber)}
+.reviewitem.no{border-left:6px solid var(--red)}
+.ansline{font-size:.94rem;margin:6px 0}
+.ansline .k{font-weight:700}
+.explain{background:var(--surface2);border-radius:9px;padding:10px 13px;font-size:.93rem;margin-top:9px}
+.explain b{color:var(--teal-dark)}
+@media (prefers-color-scheme: dark){.explain b{color:var(--teal)}}
+footer{color:var(--ink2);font-size:.85rem;text-align:center;padding:8px 16px 30px}
+.kisi{font-size:.92rem}
+.kisi li{margin:5px 0}
+@media print{.examhead,.qnav,.navpanel,.no-print{display:none!important}}
 </style>
 </head>
 <body>
 
-<section id="vLogin" class="login grid">
-  <form class="lcard" onsubmit="mulai(event)" autocomplete="off">
-    <h1>Ujian Online Matematika Kelas VI</h1>
-    <p>Bab 1 Pecahan dan Desimal, Bab 2 Rasio, Bab 3 Kubus dan Balok, Bab 4 Peluang</p>
-    <label class="f" for="nama">Nama lengkap</label>
-    <input id="nama" type="text" maxlength="60" placeholder="Tulis nama lengkap">
-    <label class="f" for="kelas">Kelas</label>
-    <input id="kelas" type="text" maxlength="12" placeholder="Contoh: VI A">
-    <div class="err" id="err" role="alert"></div>
-    <ul class="rules">
-      <li>40 soal kontekstual (level C1–C4): 20 pilihan ganda, 5 benar/salah, 5 menjodohkan, 10 isian.</li>
-      <li>Waktu <span id="dur"></span> menit. Jawaban tersimpan otomatis.</li>
-      <li>Jika halaman tertutup, masuk lagi dengan perangkat yang sama untuk melanjutkan.</li>
-    </ul>
-    <button class="btn go" type="submit">Mulai ujian</button>
-  </form>
-</section>
-
-<section id="vExam" class="hide">
-  <div class="top"><div class="wrap">
-    <div class="who"><span id="wNama"></span><small id="wKelas"></small></div>
-    <div class="timer" id="timer" aria-live="off">00:00</div>
-  </div></div>
-  <div class="wrap layout">
-    <main class="card" id="qcard"></main>
-    <aside class="card nav">
-      <h3>Daftar soal</h3><div class="ng" id="ng"></div>
-      <div class="lg">Biru: sudah dijawab. Kuning: ragu-ragu. Bingkai tebal: soal yang sedang dibuka.</div>
-      <button class="btn go" onclick="selesai()">Kumpulkan jawaban</button>
-    </aside>
-  </div>
-</section>
-
-<section id="vRes" class="hide">
-  <div class="wrap">
-    <div class="card score" id="rs"></div>
-    <div class="act noprint" style="justify-content:center">
-      <button class="btn" onclick="unduh()">Unduh hasil (CSV)</button>
-      <button class="btn sec" onclick="window.print()">Cetak</button>
-      <button class="btn sec" onclick="baru()">Peserta baru</button>
+<!-- ================= MULAI ================= -->
+<div id="screen-start">
+  <div class="topband">
+    <div class="wrap">
+      <p class="kicker">Simulasi TKA SD 2027 · Tryout</p>
+      <h1>CBT Tryout TKA Matematika Kelas 6</h1>
+      <p>30 soal baru yang disusun mengikuti Kerangka TKA Matematika SD/MI/sederajat dari Pusmendik Kemendikdasmen — elemen Bilangan, Geometri dan Pengukuran, serta Data — dengan model soal dan tingkat kesukaran yang sejajar dengan contoh resmi, tetapi seluruh konteks, angka, dan gambar berbeda.</p>
+      <div class="chips">
+        <span class="chip">30 soal</span>
+        <span class="chip">75 menit</span>
+        <span class="chip">18 PG · 9 PGK Benar/Salah · 3 PGK Pilihan Ganda Kompleks</span>
+        <span class="chip">Nilai &amp; pembahasan langsung setelah selesai</span>
+      </div>
     </div>
-    <h2>Pembahasan</h2><div id="rv"></div>
   </div>
-</section>
+  <div class="wrap">
+    <div class="card">
+      <h2>Data Peserta</h2>
+      <label class="flabel" for="f-nama">Nama lengkap</label>
+      <input type="text" id="f-nama" placeholder="Tulis namamu" autocomplete="name" />
+      <label class="flabel" for="f-kelas">Kelas</label>
+      <select id="f-kelas">
+        <option value="">— Pilih kelas —</option>
+        <option>6A</option><option>6B</option><option>6C</option><option>6D</option><option>6E</option>
+        <option>Kelas 6 (lainnya)</option>
+      </select>
+      <label class="flabel" for="f-sekolah">Sekolah (boleh dikosongkan)</label>
+      <input type="text" id="f-sekolah" placeholder="Nama sekolah" />
+
+      <div class="petunjuk">
+        <h3>📋 PETUNJUK — BACA DULU SEBELUM MULAI!</h3>
+        <ol>
+          <li><span>Waktu pengerjaan <b>75 menit</b>. Waktu berjalan mundur di bagian atas layar dan tryout terkumpul otomatis saat waktu habis.</span></li>
+          <li><span>Ada 3 bentuk soal: <b>Pilihan Ganda</b> (pilih 1 jawaban), <b>PGK Kategori</b> (tentukan Benar/Salah untuk setiap pernyataan), dan <b>PGK Pilihan Ganda Kompleks</b> (jawaban benar lebih dari satu — centang semua yang benar).</span></li>
+          <li><span>Gunakan tombol nomor soal di panel navigasi untuk berpindah soal. Warna hijau berarti sudah dijawab. Tandai <b>Ragu-ragu</b> bila belum yakin.</span></li>
+          <li><span>Siapkan kertas coretan dan alat tulis. Kerjakan sendiri dengan jujur — tryout ini untuk mengukur kemampuanmu yang sebenarnya.</span></li>
+          <li><span>Penilaian: soal PGK Kategori dinilai per pernyataan, soal Pilihan Ganda Kompleks harus tepat seluruhnya. Nilai akhir berskala 0–100 dan pembahasan setiap soal tampil setelah kamu mengumpulkan.</span></li>
+        </ol>
+      </div>
+
+      <label class="cek">
+        <input type="checkbox" id="f-jujur" />
+        <span>Saya akan mengerjakan tryout ini <b>sendiri dan dengan jujur</b>, tanpa membuka buku, bertanya kepada orang lain, atau menggunakan kalkulator.</span>
+      </label>
+      <p id="start-err" style="color:var(--red);font-weight:600;margin:0 0 10px" class="hidden"></p>
+      <button class="btn btn-primary" id="btn-start" disabled style="width:100%">Mulai Tryout →</button>
+    </div>
+
+    <div class="card">
+      <h2>Kisi-Kisi Tryout Ini</h2>
+      <ul class="kisi">
+        <li><b>Bilangan</b> — pecahan senilai, perbandingan &amp; pengurutan pecahan, relasi pecahan–desimal–persen, operasi bilangan cacah dan pecahan, KPK dan FPB.</li>
+        <li><b>Geometri dan Pengukuran</b> — bentuk bangun datar, konstruksi bangun ruang &amp; visualisasi spasial, satuan panjang/volume/berat/waktu, kecepatan, keliling &amp; luas bangun datar, volume kubus &amp; balok, penaksiran ukuran.</li>
+        <li><b>Data</b> — penyajian dan penggunaan data dari gambar, piktogram, diagram batang, dan tabel frekuensi.</li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--ink2);margin:8px 0 0">Acuan: Kerangka TKA Matematika SD/MI/sederajat, Pusmendik Kemendikdasmen — <a href="https://pusmendik.kemendikdasmen.go.id/tka/kerangka/sd/" target="_blank" rel="noopener">pusmendik.kemendikdasmen.go.id/tka/kerangka/sd</a>. Soal-soal di halaman ini adalah soal latihan baru, bukan soal resmi Pusmendik/Kemendikdasmen.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= UJIAN ================= -->
+<div id="screen-exam" class="hidden">
+  <div class="examhead">
+    <div class="wrap" style="padding-bottom:0">
+      <div class="row">
+        <div class="who" id="exam-who">—</div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span style="font-size:.88rem;color:var(--ink2)" id="exam-count">Terjawab 0/30</span>
+          <div class="timer" id="timer">75:00</div>
+        </div>
+      </div>
+      <div class="progressbar"><i id="pbar"></i></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="examgrid">
+      <div class="card" id="qcard" style="margin-bottom:0"></div>
+      <div class="card navpanel">
+        <h3 style="font-size:1rem">Navigasi Soal</h3>
+        <div class="navgrid" id="navgrid"></div>
+        <div class="legend">
+          <i class="lg-done"></i>Sudah dijawab<br />
+          <i class="lg-ragu"></i>Ragu-ragu<br />
+          <i class="lg-now"></i>Soal saat ini
+        </div>
+        <button class="btn btn-amber" id="btn-finish" style="width:100%;margin-top:14px">Kumpulkan Tryout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HASIL ================= -->
+<div id="screen-result" class="hidden">
+  <div class="topband">
+    <div class="wrap">
+      <p class="kicker">Hasil Tryout</p>
+      <h1 id="res-title">Hasil Tryout TKA Matematika</h1>
+      <p id="res-sub">—</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="card" style="text-align:center">
+      <div style="font-size:.9rem;font-weight:700;color:var(--ink2);letter-spacing:.08em">NILAI AKHIR</div>
+      <div class="scorebig" id="res-score">0</div>
+      <div id="res-note" style="font-weight:600"></div>
+      <div class="statgrid">
+        <div class="stat"><b id="res-benar">0</b><span>Soal tepat penuh</span></div>
+        <div class="stat"><b id="res-sebagian">0</b><span>Soal tepat sebagian</span></div>
+        <div class="stat"><b id="res-salah">0</b><span>Soal belum tepat</span></div>
+        <div class="stat"><b id="res-waktu">—</b><span>Waktu terpakai</span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center" class="no-print">
+        <button class="btn btn-primary" id="btn-review">Lihat Pembahasan</button>
+        <button class="btn btn-ghost" id="btn-download">Unduh Hasil (.txt)</button>
+        <button class="btn btn-ghost" id="btn-retry">Ulangi Tryout</button>
+      </div>
+    </div>
+    <div id="review" class="hidden"></div>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<footer>Tryout latihan — soal baru disusun mengikuti kerangka resmi TKA Matematika SD/MI/sederajat (Pusmendik Kemendikdasmen). Bukan soal resmi dan bukan bagian dari TKA yang sebenarnya.</footer>
 
 <script>
-const Q=[{"t": "pg", "b": 1, "q": "Satu ember kecil air dapat menyiram {3/5} m² kebun. Luas kebun yang dapat disiram dengan 4 ember kecil adalah … m².", "o": ["{7/5}", "{12/5}", "{12/20}", "{3/20}"], "a": 1, "p": "Kalikan bilangan asli dengan pembilang, penyebut tetap: 4 × {3/5} = {12/5} = 2{2/5} m².", "no": 1, "lv": 3}, {"t": "pg", "b": 1, "q": "Agam memiliki 15 pohon mangga. {2/3} bagian di antaranya adalah mangga manalagi. Banyak pohon mangga manalagi adalah … pohon.", "o": ["5", "8", "10", "12"], "a": 2, "p": "{2/3} × 15 = {30/3} = 10. Cara lain: bagi 15 menjadi 3 bagian (tiap bagian 5 pohon), lalu ambil 2 bagian = 10 pohon.", "no": 2, "lv": 3}, {"t": "pg", "b": 1, "q": "Pak Wayan memiliki {3/4} liter cat untuk mengecat 3 papan nama yang ukurannya sama. Cat yang dipakai untuk setiap papan adalah … liter.", "o": ["{1/4}", "{9/4}", "{3/7}", "{1/12}"], "a": 0, "p": "{3/4} ÷ 3 = {3/4} × {1/3} = {3/12} = {1/4} liter.", "no": 3, "lv": 3}, {"t": "pg", "b": 1, "q": "Sisa air di penampungan {2/3} bagian akan dipakai selama 2 hari dengan jumlah sama setiap hari. Air yang dipakai setiap hari adalah … bagian.", "o": ["{4/3}", "{2/5}", "{1/6}", "{1/3}"], "a": 3, "p": "{2/3} ÷ 2 = {2/3} × {1/2} = {2/6} = {1/3} bagian.", "no": 4, "lv": 3}, {"t": "pg", "b": 1, "q": "Agam menyiapkan 3 liter jus jeruk dan menuangkannya ke gelas berkapasitas {1/4} liter. Ayah menyiapkan 2 liter jus jambu dan menuangkannya ke gelas berkapasitas {1/2} liter. Pernyataan yang benar adalah …", "o": ["Ayah menyiapkan gelas lebih banyak daripada Agam", "Agam dan Ayah menyiapkan gelas yang sama banyak", "Agam menyiapkan 8 gelas lebih banyak daripada Ayah", "Agam menyiapkan 4 gelas lebih banyak daripada Ayah"], "a": 2, "p": "Agam: 3 ÷ {1/4} = 12 gelas. Ayah: 2 ÷ {1/2} = 4 gelas. Selisihnya 12 − 4 = 8, jadi Agam menyiapkan 8 gelas lebih banyak.", "no": 5, "lv": 4}, {"t": "pg", "b": 1, "q": "Bentuk desimal dari {7/20} adalah …", "o": ["0,7", "0,35", "0,2", "3,5"], "a": 1, "p": "Ubah penyebut menjadi 100: {7/20} = {35/100} = 0,35.", "no": 6, "lv": 2}, {"t": "pg", "b": 1, "q": "Jarak rumah ke sekolah: Alma 2,3 km; Anita 1,9 km; Rini 2,6 km; Andi 1,5 km. Urutan dari yang terdekat ke yang terjauh adalah …", "o": ["Andi, Anita, Alma, Rini", "Andi, Anita, Rini, Alma", "Rini, Alma, Anita, Andi", "Anita, Andi, Alma, Rini"], "a": 0, "p": "Urutkan desimal dari yang terkecil: 1,5 < 1,9 < 2,3 < 2,6, yaitu Andi, Anita, Alma, Rini.", "no": 7, "lv": 3}, {"t": "pg", "b": 1, "q": "Rini mengatakan bahwa 0,5 lebih kecil daripada 0,45 karena 5 lebih kecil daripada 45. Tanggapan yang tepat terhadap pernyataan Rini adalah …", "o": ["Benar, karena 5 lebih kecil daripada 45", "Benar, karena 0,5 hanya memiliki satu angka di belakang koma", "Salah, karena 0,45 sama dengan 0,450 sehingga lebih besar", "Salah, karena persepuluhan pada 0,5 (yaitu 5) lebih besar daripada persepuluhan pada 0,45 (yaitu 4)"], "a": 3, "p": "Bandingkan nilai tempat dari kiri. Satuan sama (0), persepuluhan 5 > 4, sehingga 0,5 > 0,45. Rini keliru karena membandingkan 5 dengan 45 seperti bilangan bulat, padahal angka di belakang koma punya nilai tempat berbeda.", "no": 8, "lv": 4}, {"t": "pg", "b": 2, "q": "Di kebun sekolah, untuk setiap 2 pohon pucuk merah ditanam 3 pohon cemara. Rasio banyak pohon pucuk merah terhadap pohon cemara adalah …", "o": ["3 : 2", "2 : 3", "2 : 5", "5 : 3"], "a": 1, "p": "Pucuk merah terhadap cemara ditulis 2 : 3. Urutan penting: 3 : 2 berarti cemara terhadap pucuk merah.", "no": 9, "lv": 2}, {"t": "pg", "b": 2, "q": "Pada bazar sekolah, Rina menjual 15 kue kering dan 20 kue basah. Rasio kue kering terhadap kue basah dalam bentuk paling sederhana adalah …", "o": ["15 : 20", "4 : 3", "5 : 4", "3 : 4"], "a": 3, "p": "15 : 20, bagi kedua bilangan dengan 5 sehingga menjadi 3 : 4.", "no": 10, "lv": 3}, {"t": "pg", "b": 2, "q": "Rasio banyak pengunjung bianglala terhadap roller coaster adalah 4 : 3. Jika pengunjung roller coaster 24 orang, pengunjung bianglala ada … orang.", "o": ["32", "18", "28", "36"], "a": 0, "p": "3 bagian = 24, sehingga 1 bagian = 24 ÷ 3 = 8. Bianglala = 4 × 8 = 32 orang.", "no": 11, "lv": 3}, {"t": "pg", "b": 2, "q": "Paket 3 bibit jahe merah harganya Rp37.500,00 dan paket 5 bibit harganya Rp58.000,00. Pilihan yang lebih murah per bibit adalah …", "o": ["Paket 3 bibit, karena harga satuannya Rp12.500,00", "Paket 5 bibit, karena harga satuannya Rp11.600,00", "Paket 3 bibit, karena harga totalnya lebih murah", "Kedua paket sama murah"], "a": 1, "p": "Harga satuan paket 3 bibit = 37.500 ÷ 3 = Rp12.500. Paket 5 bibit = 58.000 ÷ 5 = Rp11.600. Bandingkan harga per bibit (rasio satuan), bukan harga total.", "no": 12, "lv": 4}, {"t": "pg", "b": 2, "q": "Penjaga toko mengemas 6 bibit tanaman dalam 1,5 jam. Dengan kecepatan yang sama, bibit yang selesai dikemas dalam 4 jam adalah … bibit.", "o": ["9", "12", "16", "24"], "a": 2, "p": "Rasio satuan: 6 ÷ 1,5 = 4 bibit per jam. Dalam 4 jam: 4 × 4 = 16 bibit.", "no": 13, "lv": 3}, {"t": "pg", "b": 3, "q": "Persamaan antara kubus dan balok adalah …", "o": ["Semua sisinya berbentuk persegi", "Semua rusuknya sama panjang", "Memiliki 6 sisi, 12 rusuk, dan 8 titik sudut", "Semua sisinya sama besar"], "a": 2, "p": "Kubus dan balok sama-sama memiliki 6 sisi, 12 rusuk, dan 8 titik sudut. Hanya kubus yang semua sisinya persegi sama besar.", "no": 14, "lv": 2}, {"t": "pg", "b": 3, "q": "Anike menyusun kubus satuan menjadi 3 tumpukan yang berjajar dalam satu baris. Tumpukannya terdiri atas 1, 2, dan 3 kubus. Jika dilihat dari atas, banyak persegi yang tampak adalah …", "o": ["3", "6", "9", "1"], "a": 0, "p": "Dari atas hanya tampak bagian paling atas setiap tumpukan, yaitu 3 persegi. (Angka 6 adalah jumlah seluruh kubus.)", "no": 15, "lv": 3}, {"t": "pg", "b": 3, "q": "Peta berpetak taman sekolah: kolom diberi huruf A–E dari kiri ke kanan, baris diberi angka 1–5 dari atas ke bawah. Rina berjalan lurus dari perpustakaan (B2) ke kantin (E2), lalu lurus ke taman (E5). Banyak petak yang ia tempuh seluruhnya adalah …", "o": ["3", "9", "5", "6"], "a": 3, "p": "B2 ke E2 melewati 3 petak (C, D, E). E2 ke E5 melewati 3 petak (3, 4, 5). Totalnya 3 + 3 = 6 petak.", "no": 16, "lv": 3}, {"t": "pg", "b": 4, "q": "Kejadian berikut yang termasuk tidak mungkin adalah …", "o": ["Matahari terbit besok pagi", "Seseorang berkurang usianya tahun depan", "Hujan di sekitar rumah Dhien", "Keluarga makan malam bersama"], "a": 1, "p": "Usia seseorang tidak pernah berkurang, jadi kejadiannya tidak mungkin. Matahari terbit besok pagi itu pasti; dua kejadian lain mungkin terjadi.", "no": 17, "lv": 2}, {"t": "pg", "b": 4, "q": "Dhien memiliki 3 buku putih, 6 buku merah, dan 1 buku kuning. Jika satu buku diambil secara acak, warna buku yang peluang terambilnya paling besar adalah …", "o": ["Merah", "Putih", "Kuning", "Hijau"], "a": 0, "p": "Buku merah paling banyak (6 dari 10 buku), sehingga peluang terambilnya paling besar. Buku hijau tidak ada, jadi tidak mungkin terambil.", "no": 18, "lv": 3}, {"t": "pg", "b": 4, "q": "Peluang mendapatkan sisi angka saat melempar sebuah koin adalah …", "o": ["1 dari 6", "2 dari 1", "1 dari 2", "1 dari 1"], "a": 2, "p": "Koin memiliki 2 kemungkinan (angka atau garuda). Sisi angka hanya 1, sehingga peluangnya 1 dari 2.", "no": 19, "lv": 1}, {"t": "pg", "b": 4, "q": "Dina dan Eko bermain. Dina menang jika muncul sisi angka pada lemparan sebuah koin. Eko menang jika muncul angka 6 pada lemparan sebuah dadu. Pernyataan yang tepat adalah …", "o": ["Eko lebih berpeluang menang karena dadu memiliki angka lebih banyak", "Dina dan Eko sama berpeluang menang", "Eko lebih berpeluang menang karena ada 6 kemungkinan", "Dina lebih berpeluang menang karena peluangnya 1 dari 2, sedangkan Eko 1 dari 6"], "a": 3, "p": "Peluang Dina 1 dari 2, peluang Eko 1 dari 6. Kemungkinan pada koin lebih sedikit sehingga peluang Dina lebih besar. Permainan ini kurang adil.", "no": 20, "lv": 4}, {"t": "bs", "b": 1, "q": "Adi berpendapat bahwa hasil kali bilangan asli dengan suatu pecahan selalu lebih kecil daripada bilangan aslinya. Pendapat Adi benar.", "a": false, "p": "Salah. Jika pecahannya lebih dari 1, hasilnya justru lebih besar. Contoh: 4 × {3/2} = 6 dan 6 > 4.", "no": 21, "lv": 4}, {"t": "bs", "b": 1, "q": "Ibu menuangkan 3 liter sirup ke dalam botol-botol berkapasitas {1/4} liter. Banyak botol yang terisi penuh lebih dari 3 botol.", "a": true, "p": "Benar. 3 ÷ {1/4} = 3 × 4 = 12 botol dan 12 > 3. Membagi bilangan asli dengan pecahan sejati menghasilkan bilangan yang lebih besar.", "no": 22, "lv": 4}, {"t": "bs", "b": 2, "q": "Rasio 2 : 3 memiliki arti yang sama dengan rasio 3 : 2.", "a": false, "p": "Salah. Urutan menentukan makna. 2 : 3 berarti setiap 2 bagian pertama ada 3 bagian kedua, sedangkan 3 : 2 sebaliknya.", "no": 23, "lv": 2}, {"t": "bs", "b": 3, "q": "Kubus dan balok sama-sama memiliki 12 rusuk.", "a": true, "p": "Benar. Keduanya memiliki 12 rusuk, 6 sisi, dan 8 titik sudut.", "no": 24, "lv": 1}, {"t": "bs", "b": 4, "q": "Sebuah permainan dikatakan adil jika kemungkinan menang setiap pemain tidak sama.", "a": false, "p": "Salah. Permainan adil jika kemungkinan menang setiap pemain sama. Jika tidak sama, permainan itu kurang adil.", "no": 25, "lv": 2}, {"t": "jd", "b": 1, "q": "Ibu membeli 12 butir telur dan memakai {5/6} bagian di antaranya untuk membuat kue. Banyak telur yang dipakai adalah …", "a": "E", "p": "{5/6} × 12 = {60/6} = 10 (pilihan E).", "no": 26, "lv": 3}, {"t": "jd", "b": 1, "q": "Sebuah jerigen berisi 6 liter minyak dituang ke botol-botol berkapasitas {1/2} liter. Banyak botol yang terisi penuh adalah …", "a": "B", "p": "6 ÷ {1/2} = 6 × 2 = 12 (pilihan B).", "no": 27, "lv": 3}, {"t": "jd", "b": 2, "q": "Rasio kambing terhadap ayam adalah 3 : 4. Jika ayam ada 20 ekor, banyak kambing adalah …", "a": "C", "p": "4 bagian = 20, sehingga 1 bagian = 5. Kambing = 3 × 5 = 15 (pilihan C).", "no": 28, "lv": 3}, {"t": "jd", "b": 3, "q": "Rani membuat kerangka kubus dari sedotan dan memberi satu gumpalan plastisin di setiap titik sudut. Banyak gumpalan plastisin yang diperlukan adalah …", "a": "A", "p": "Kubus memiliki 8 titik sudut sehingga diperlukan 8 gumpalan (pilihan A).", "no": 29, "lv": 3}, {"t": "jd", "b": 4, "q": "Dina melempar sebuah dadu pada permainan ular tangga. Banyak kemungkinan angka yang dapat muncul adalah …", "a": "D", "p": "Dadu memiliki 6 sisi sehingga ada 6 kemungkinan (pilihan D).", "no": 30, "lv": 3}, {"t": "is", "b": 1, "q": "Di kelas ada 25 siswa. Sebanyak {3/5} di antaranya membawa bekal dari rumah. Banyak siswa yang membawa bekal adalah … siswa.", "a": ["15"], "p": "{3/5} × 25 = {75/5} = 15.", "show": "15", "no": 31, "lv": 3}, {"t": "is", "b": 1, "q": "Resep kue memerlukan {3/20} kg tepung. Jika ditulis pada timbangan digital dalam bentuk desimal, tepung tersebut adalah … kg.", "a": ["0,15", "0.15"], "p": "{3/20} = {15/100} = 0,15.", "show": "0,15", "no": 32, "lv": 3}, {"t": "is", "b": 1, "q": "Ibu membagi {4/5} kg gula sama banyak ke dalam 2 toples. Gula dalam setiap toples adalah … kg (tulis dalam pecahan paling sederhana, misalnya 1/2).", "a": ["2/5", "0,4"], "p": "{4/5} ÷ 2 = {4/5} × {1/2} = {4/10} = {2/5}.", "show": "{2/5}", "no": 33, "lv": 3}, {"t": "is", "b": 2, "q": "Rasio banyak kelereng Doni terhadap Eka adalah 3 : 5. Jumlah kelereng mereka 48 butir. Selisih kelereng Doni dan Eka adalah … butir.", "a": ["12"], "p": "Jumlah bagian = 3 + 5 = 8, sehingga 1 bagian = 48 ÷ 8 = 6. Doni = 18 butir, Eka = 30 butir, selisihnya 30 − 18 = 12 butir.", "show": "12", "no": 34, "lv": 4}, {"t": "is", "b": 2, "q": "Toko A menjual 3 buku tulis seharga Rp21.000,00. Toko B menjual 5 buku tulis seharga Rp30.000,00. Selisih harga satuan buku tulis di kedua toko adalah Rp … (tulis angkanya saja).", "a": ["1000", "1.000"], "p": "Toko A: 21.000 ÷ 3 = 7.000 per buku. Toko B: 30.000 ÷ 5 = 6.000 per buku. Selisihnya 7.000 − 6.000 = 1.000.", "show": "1.000", "no": 35, "lv": 4}, {"t": "is", "b": 2, "q": "Sebuah mesin dapat mengemas 45 botol dalam 3 menit. Dalam 8 menit, mesin tersebut mengemas … botol.", "a": ["120"], "p": "45 ÷ 3 = 15 botol per menit. Dalam 8 menit: 15 × 8 = 120 botol.", "show": "120", "no": 36, "lv": 3}, {"t": "is", "b": 3, "q": "Sebuah toko menyusun kardus kecil berbentuk kubus pada rak: 3 tingkat, tiap tingkat 2 baris, dan tiap baris berisi 4 kardus. Banyak kardus pada rak adalah …", "a": ["24"], "p": "Tiap lapis: 4 × 2 = 8 kubus. Tiga lapis: 8 × 3 = 24 kubus.", "show": "24", "no": 37, "lv": 3}, {"t": "is", "b": 3, "q": "Pada peta berpetak (kolom A–F, baris 1–6 dari atas ke bawah), rumah Tigor di C2 dan sekolah di C6. Jarak vertikal dari rumah Tigor ke sekolah adalah … petak.", "a": ["4"], "p": "Kolomnya sama (C), baris dari 2 ke 6: 6 − 2 = 4 petak.", "show": "4", "no": 38, "lv": 3}, {"t": "is", "b": 4, "q": "Dalam sebuah kantong terdapat 5 bola merah dan 1 bola biru. Jika satu bola diambil secara acak, bola yang peluang terambilnya paling kecil berwarna …", "a": ["biru"], "p": "Bola biru hanya 1 dari 6 bola, paling sedikit, sehingga peluang terambilnya paling kecil.", "show": "biru", "no": 39, "lv": 3}, {"t": "is", "b": 4, "q": "Dito menang jika sebuah dadu menunjukkan angka 6, sedangkan Eka menang jika dadu menunjukkan angka genap. Permainan ini disebut permainan yang … (adil / kurang adil)", "a": ["kurang adil", "tidak adil"], "p": "Peluang Dito 1 dari 6, peluang Eka 3 dari 6 (angka 2, 4, 6). Kemungkinan menang tidak sama, sehingga permainan kurang adil.", "show": "kurang adil", "no": 40, "lv": 4}], OPT=["8", "12", "15", "6", "10", "4"], BAB={"1": "Pecahan dan Desimal", "2": "Rasio", "3": "Kubus dan Balok", "4": "Peluang"}, COL={"1": "#2D5BE3", "2": "#1FA88A", "3": "#EF5B6E", "4": "#C98A00"};
-const DUR=60;            // durasi ujian (menit), ubah sesuai kebutuhan
-const SETORAN_URL="";    // opsional: isi dengan URL Google Apps Script agar hasil terkirim ke guru
-const KEY="cbt_mtk6_v1", L="ABCDEF";
-const SEC={pg:["A","Pilihan Ganda","Pilih satu jawaban yang paling tepat."],bs:["B","Benar atau Salah","Tentukan apakah pernyataan itu benar atau salah."],jd:["C","Menjodohkan","Pilih huruf jawaban yang cocok. Satu pilihan hanya dipakai paling banyak sekali, dan ada satu pilihan yang tidak terpakai."],is:["D","Isian Singkat","Ketik jawabanmu pada kolom. Untuk pecahan tulis seperti 1/2."]};
-const $=s=>document.querySelector(s);
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const fm=s=>esc(s).replace(/\{(\d+)\/(\d+)\}/g,'<span class="fr"><span class="n">$1</span><span class="d">$2</span></span>');
-let S=load()||{ans:{},flag:{},cur:0}, tm=null;
-function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
-function view(id){["vLogin","vExam","vRes"].forEach(v=>$("#"+v).classList.toggle("hide",v!==id));window.scrollTo(0,0)}
-$("#dur").textContent=DUR;
+"use strict";
+/* ================= DATA SOAL =================
+   30 soal BARU sejajar Kerangka TKA Matematika SD (Pusmendik):
+   No. soal mengikuti kompetensi contoh resmi, konteks & angka seluruhnya baru.
+   type: pg | mcma | kategori                                        */
+var QUESTIONS = [
+{ n:1, type:"pg", elemen:"Bilangan", komp:"Operasi penjumlahan dan pengurangan pecahan",
+  stem:"<p>Hasil dari <b>3/5 + 2/3 − 1/2</b> adalah ….</p>",
+  options:["23/30","13/30","7/10","4/5"], key:0,
+  explain:"Samakan penyebut menjadi 30: 3/5 = 18/30, 2/3 = 20/30, 1/2 = 15/30. Jadi 18/30 + 20/30 − 15/30 = <b>23/30</b>." },
 
-function mulai(e){
-  e.preventDefault();
-  const n=$("#nama").value.trim(),k=$("#kelas").value.trim();
-  if(n.length<3){$("#err").textContent="Nama lengkap belum diisi.";return}
-  if(!k){$("#err").textContent="Kelas belum diisi.";return}
-  S={nama:n,kelas:k,start:Date.now(),ans:{},flag:{},cur:0,done:false};save();ex();
+{ n:2, type:"pg", elemen:"Bilangan", komp:"Operasi pecahan, desimal, dan persen (diskon)",
+  stem:"<p>Menjelang tahun ajaran baru, Toko Alat Tulis Cendekia memberi diskon <b>25%</b> untuk semua barang. Harga satu set penggaris adalah <b>2/5</b> dari harga kalkulator. Harga buku catatan adalah <b>0,6 kali</b> harga kalkulator. Harga kalkulator adalah Rp50.000,00.</p><p>Harga satu set penggaris dan satu buku catatan <b>setelah diskon</b> adalah ….</p>",
+  options:["Rp30.000,00","Rp37.500,00","Rp40.000,00","Rp50.000,00"], key:1,
+  explain:"Harga penggaris = 2/5 × Rp50.000 = Rp20.000. Harga buku catatan = 0,6 × Rp50.000 = Rp30.000. Jumlah = Rp50.000. Diskon 25% = Rp12.500, sehingga yang dibayar = Rp50.000 − Rp12.500 = <b>Rp37.500,00</b>." },
+
+{ n:3, type:"kategori", elemen:"Bilangan", komp:"Operasi perkalian dan pembagian pecahan dengan bilangan asli",
+  stem:"<p>Pak Rudi menjual jus buah. Suatu hari ia membuat jus sebanyak <b>5 wadah</b> yang masing-masing berisi <b>4/5 liter</b>. Seluruh jus dituangkan ke dalam <b>16 botol besar</b> dengan isi sama banyak dan <b>8 botol kecil</b> yang isinya setengah botol besar.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Pada hari itu Pak Rudi membuat jus sebanyak 4 liter.",
+    "Setiap botol besar diisi jus sebanyak 1/4 liter.",
+    "Total jus yang dikemas dalam botol kecil adalah 4/5 liter."
+  ], key:[true,false,true],
+  explain:"Total jus = 5 × 4/5 = 4 liter (A Benar). Misal isi botol besar = b, maka 16b + 8 × (b/2) = 20b = 4 liter, jadi b = 1/5 liter (B Salah). Isi botol kecil = 1/10 liter, totalnya 8 × 1/10 = 4/5 liter (C Benar)." },
+
+{ n:4, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Konstruksi bangun ruang dan visualisasi spasial",
+  stem:"<p>Nara bermain ular tangga menggunakan sebuah dadu. Pada dadu, jumlah mata pada setiap dua sisi yang berlawanan selalu <b>7</b>. Gambar berikut menunjukkan dadu hasil lemparan Nara: sisi atas bermata <b>2</b> dan sisi depan bermata <b>6</b>.</p>",
+  fig:"dice",
+  figcap:"Dadu Nara: atas 2 mata, depan 6 mata.",
+  options:["3","4","5","6"], key:2,
+  explain:"Sisi bawah berlawanan dengan sisi atas. Karena jumlah mata dua sisi berlawanan selalu 7 dan sisi atas bermata 2, maka sisi bawah bermata 7 − 2 = <b>5</b>." },
+
+{ n:5, type:"mcma", elemen:"Geometri dan Pengukuran", komp:"Hubungan antar-satuan baku berat",
+  stem:"<p>Setiap bulan Ramadan, SD Nusantara mengadakan bakti sosial. Mereka membagikan paket sembako berisi <b>2 kg beras</b>, <b>tiga</b> kemasan gula pasir dengan berat masing-masing <b>4 hg</b>, dan <b>empat</b> bungkus garam dengan berat per bungkus <b>125 gram</b>.</p><p>Pilihlah pernyataan yang benar! <b>Jawaban benar lebih dari satu.</b></p>",
+  options:[
+    "Total berat semua isi paket adalah 3.700 gram.",
+    "Berat seluruh garam dalam paket lebih dari 0,5 kilogram.",
+    "Satu kemasan gula pasir lebih ringan daripada seluruh garam.",
+    "Berat beras sama dengan berat seluruh gula pasir."
+  ], key:[0,2],
+  explain:"Beras = 2.000 g. Gula = 3 × 4 hg = 3 × 400 g = 1.200 g. Garam = 4 × 125 g = 500 g. Total = 2.000 + 1.200 + 500 = 3.700 g (pernyataan 1 Benar). Garam 500 g = 0,5 kg, tidak lebih dari 0,5 kg (pernyataan 2 Salah). Satu kemasan gula 400 g &lt; garam 500 g (pernyataan 3 Benar). Beras 2.000 g ≠ gula 1.200 g (pernyataan 4 Salah)." },
+
+{ n:6, type:"kategori", elemen:"Data", komp:"Pengambilan informasi dan penggunaan data (diagram batang)",
+  stem:"<p>Bu Sari mendata banyak siswa yang membeli alat tulis di koperasi sekolah selama lima hari. Data ditampilkan pada diagram batang berikut.</p>",
+  fig:"chartKoperasi",
+  figcap:"Diagram batang pembeli koperasi sekolah.",
+  extra:"<p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut tentang data tersebut!</p>",
+  statements:[
+    "Banyak pembeli pada hari Senin adalah setengah dari banyak pembeli pada hari Kamis.",
+    "Total pembeli dari hari Senin sampai Jumat adalah 140 siswa.",
+    "Perbedaan banyak pembeli antara dua hari berurutan tidak lebih dari 15 siswa."
+  ], key:[true,false,true],
+  explain:"Data: Senin 20, Selasa 35, Rabu 25, Kamis 40, Jumat 30. A: 20 adalah setengah dari 40 (Benar). B: total = 20+35+25+40+30 = 150, bukan 140 (Salah). C: selisih berurutan 15, 10, 15, 10 — semuanya tidak lebih dari 15 (Benar)." },
+
+{ n:7, type:"kategori", elemen:"Data", komp:"Penyajian data (piktogram)",
+  stem:"<p>Dalam program Sabtu Membaca, tiga siswa mencatat banyak buku yang mereka baca dalam bentuk piktogram berikut. Setiap gambar buku mewakili <b>2 buku</b>.</p>",
+  fig:"pikto",
+  figcap:"Piktogram buku yang dibaca (1 gambar = 2 buku).",
+  extra:"<p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Rani membaca 8 buku.",
+    "Dedi membaca buku lebih banyak daripada Sinta.",
+    "Jumlah buku yang dibaca ketiga siswa adalah 24 buku."
+  ], key:[true,false,true],
+  explain:"Rani: 4 gambar × 2 = 8 buku (A Benar). Dedi: 3 gambar × 2 = 6 buku; Sinta: 5 gambar × 2 = 10 buku, jadi Dedi lebih sedikit (B Salah). Total = 8 + 6 + 10 = 24 buku (C Benar)." },
+
+{ n:8, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Penaksiran ukuran / pecahan dari luas lahan",
+  stem:"<p>Pak Bakri mempunyai lahan seluas <b>4,5 hektar</b>. Sebanyak <b>2/5</b> bagian lahan ditanami jagung, <b>1/3</b> bagian ditanami singkong, dan sisanya ditanami kedelai.</p><p>Luas lahan yang ditanami singkong dan kedelai adalah ….</p>",
+  options:["1,8 hektar","2,7 hektar","3,0 hektar","3,6 hektar"], key:1,
+  explain:"Luas singkong + kedelai = seluruh lahan dikurangi bagian jagung = 4,5 × (1 − 2/5) = 4,5 × 3/5 = <b>2,7 hektar</b>." },
+
+{ n:9, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Volume bangun ruang (kubus dan balok)",
+  stem:"<p>Sebuah bak berbentuk kubus memiliki volume <b>27 m³</b>. Bak itu diubah menjadi balok dengan panjang <b>2 kali</b> rusuk kubus, lebar <b>sama dengan</b> rusuk kubus, dan tinggi <b>2 kali</b> rusuk kubus.</p><p>Volume bak yang baru adalah ….</p>",
+  options:["27 m³","54 m³","81 m³","108 m³"], key:3,
+  explain:"Volume kubus 27 m³ berarti rusuknya 3 m (3 × 3 × 3 = 27). Balok baru: panjang 6 m, lebar 3 m, tinggi 6 m. Volumenya = 6 × 3 × 6 = <b>108 m³</b>." },
+
+{ n:10, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Laju perubahan (kecepatan)",
+  stem:"<p>Keluarga Pak Dedi tinggal di Bandar Lampung dan akan berlibur ke Metro. Jarak kedua kota <b>120 km</b> dan kecepatan rata-rata mobil Pak Dedi <b>60 km/jam</b>. Mereka berangkat pukul <b>07.30</b>.</p><p>Di tengah perjalanan mereka berhenti <b>30 menit</b> untuk beristirahat. Pukul berapakah mereka tiba di Metro?</p>",
+  options:["09.30","10.00","10.30","11.00"], key:1,
+  explain:"Waktu tempuh = 120 km ÷ 60 km/jam = 2 jam. Ditambah istirahat 30 menit menjadi 2 jam 30 menit. Berangkat 07.30 + 2 jam 30 menit = <b>10.00</b>." },
+
+{ n:11, type:"kategori", elemen:"Geometri dan Pengukuran", komp:"Waktu (hubungan antar-satuan waktu)",
+  stem:"<p>Nadia berulang tahun setiap tanggal <b>20 Agustus</b>. Ia akan berusia 12 tahun pada bulan Agustus tahun ini. Sekarang tanggal <b>5 Juli</b>.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Nadia harus menunggu 46 hari lagi untuk merayakan ulang tahunnya.",
+    "Nadia harus menunggu enam minggu dan empat hari lagi untuk merayakan ulang tahunnya.",
+    "Nadia harus menunggu dua bulan lagi untuk merayakan ulang tahunnya."
+  ], key:[true,true,false],
+  explain:"Dari 5 Juli ke 20 Agustus: sisa hari di bulan Juli = 31 − 5 = 26 hari, ditambah 20 hari di bulan Agustus = 46 hari (A Benar). 46 hari = 6 minggu (42 hari) + 4 hari (B Benar). 46 hari kurang dari dua bulan (C Salah)." },
+
+{ n:12, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Berat benda menggunakan satuan baku",
+  stem:"<p>Ibu membeli buah seberat <b>5 kg</b>. Di dalam keranjang terdapat dua buah melon dengan berat seluruhnya <b>3,2 kg</b> dan sisanya adalah <b>6 buah apel</b> yang beratnya sama.</p><p>Berat satu buah apel adalah ….</p>",
+  options:["0,25 kg","0,3 kg","0,35 kg","0,4 kg"], key:1,
+  explain:"Berat seluruh apel = 5 − 3,2 = 1,8 kg. Berat satu apel = 1,8 ÷ 6 = <b>0,3 kg</b>." },
+
+{ n:13, type:"kategori", elemen:"Geometri dan Pengukuran", komp:"Hubungan antar-satuan baku volume",
+  stem:"<p>Seorang petani memiliki tangki berisi air sebanyak <b>1,2 hektoliter</b>. Air akan dipindahkan ke bak penampungan yang dapat menampung <b>30 liter</b> air untuk menyiram tanaman.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Air di dalam tangki adalah 120 liter.",
+    "Petani dapat mengisi bak penampungan sebanyak lima kali hingga tangki kosong.",
+    "Jika satu petak tanaman membutuhkan 4 liter air, maka 15 petak tanaman dapat membuat volume air dalam tangki berkurang setengahnya."
+  ], key:[true,false,true],
+  explain:"1,2 hl = 1,2 × 100 liter = 120 liter (A Benar). 120 ÷ 30 = 4 kali pengisian, bukan lima (B Salah). 15 petak × 4 liter = 60 liter, tepat setengah dari 120 liter (C Benar)." },
+
+{ n:14, type:"mcma", elemen:"Geometri dan Pengukuran", komp:"Volume benda menggunakan satuan baku (kubus satuan)",
+  stem:"<p>Bu Guru menugaskan Bima membawa kotak yang dapat menampung tepat <b>48 kubus satuan</b>. Kubus satuan adalah kubus dengan rusuk 1 cm. Di rumah, Bima memiliki beberapa kotak dengan berbagai ukuran.</p><p>Kotak mana sajakah yang harus dibawa Bima? <b>Jawaban benar lebih dari satu.</b></p>",
+  options:[
+    "Kotak berukuran 6 cm × 4 cm × 2 cm",
+    "Kotak berukuran 8 cm × 3 cm × 2 cm",
+    "Kotak berukuran 5 cm × 4 cm × 2 cm",
+    "Kotak berukuran 12 cm × 2 cm × 3 cm"
+  ], key:[0,1],
+  explain:"Volume kotak harus 48 cm³. 6 × 4 × 2 = 48 ✓. 8 × 3 × 2 = 48 ✓. 5 × 4 × 2 = 40 ✗. 12 × 2 × 3 = 72 ✗. Jadi kotak yang tepat adalah pilihan <b>1 dan 2</b>." },
+
+{ n:15, type:"kategori", elemen:"Geometri dan Pengukuran", komp:"Hubungan antar-satuan baku panjang",
+  stem:"<p>Salsa mengunjungi kebun binatang. Setelah melewati gerbang, ia melihat papan petunjuk jarak kandang berikut: <b>Kandang Jerapah 600 m, Kandang Zebra 900 m, Kandang Panda 1.400 m</b> dari gerbang.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Jarak kandang Jerapah dari gerbang adalah 60.000 cm.",
+    "Selisih jarak kandang Panda dan kandang Zebra dari gerbang adalah 400 m.",
+    "Jika Salsa berada di kandang Zebra lalu ingin ke kandang Panda yang searah, ia harus berjalan sejauh 0,5 km."
+  ], key:[true,false,true],
+  explain:"600 m = 600 × 100 cm = 60.000 cm (A Benar). Selisih Panda − Zebra = 1.400 − 900 = 500 m, bukan 400 m (B Salah). 500 m = 0,5 km (C Benar)." },
+
+{ n:16, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Panjang benda menggunakan satuan baku",
+  stem:"<p>Raka membantu ayah memotong sebatang bambu untuk dijadikan pot tanaman. Panjang bambu <b>275 cm</b>. Ayah ingin membuat pot sebanyak mungkin dengan panjang setiap pot <b>12 cm</b>.</p><p>Sisa bambu yang tidak terpakai adalah sepanjang ….</p>",
+  options:["8 cm","9 cm","10 cm","11 cm"], key:3,
+  explain:"275 ÷ 12 = 22 pot dengan sisa 275 − (22 × 12) = 275 − 264 = <b>11 cm</b>." },
+
+{ n:17, type:"pg", elemen:"Bilangan", komp:"Kelipatan, faktor, KPK, dan FPB",
+  stem:"<p>Tiga bus sekolah berangkat dari terminal yang sama. Bus A berangkat setiap <b>4 hari</b> sekali, Bus B setiap <b>6 hari</b> sekali, dan Bus C setiap <b>8 hari</b> sekali. Hari ini ketiga bus berangkat bersamaan.</p><p>Ketiga bus akan berangkat bersamaan lagi setelah ….</p>",
+  options:["12 hari","18 hari","24 hari","48 hari"], key:2,
+  explain:"Dicari KPK dari 4, 6, dan 8. Kelipatan 8: 8, 16, 24, … — 24 habis dibagi 4 dan 6. Jadi KPK = <b>24 hari</b>." },
+
+{ n:18, type:"pg", elemen:"Bilangan", komp:"Operasi pecahan (pembagian dan pengurangan)",
+  stem:"<p>Hasil dari <b>(3/4 ÷ 1/2) − 1/2</b> adalah ….</p>",
+  options:["1","3/4","1/2","1/4"], key:0,
+  explain:"Kerjakan pembagian dulu: 3/4 ÷ 1/2 = 3/4 × 2/1 = 3/2. Kemudian 3/2 − 1/2 = 2/2 = <b>1</b>." },
+
+{ n:19, type:"pg", elemen:"Bilangan", komp:"Perbandingan dan pengurutan bilangan pecahan",
+  stem:"<p>Tania mendapat satu loyang kue yang dipotong menjadi <b>12 potong sama besar</b> seperti gambar berikut. Potong yang diarsir adalah kue rasa cokelat, sisanya rasa keju.</p>",
+  fig:"cake",
+  figcap:"Loyang kue 12 potong; yang diarsir adalah rasa cokelat.",
+  extra:"<p>Bagian kue yang berasa cokelat dari keseluruhan kue adalah ….</p>",
+  options:["5/12","7/12","5/7","1/2"], key:0,
+  explain:"Banyak potong cokelat (arsir) ada 5 dari seluruhnya 12 potong, jadi bagiannya adalah <b>5/12</b>." },
+
+{ n:20, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Keliling dan luas bangun datar",
+  stem:"<p>Pak Boni memiliki sebidang tanah berbentuk seperti gambar berikut (bentuk L). Ukuran sisi-sisinya ditunjukkan pada gambar.</p>",
+  fig:"lshape",
+  figcap:"Tanah berbentuk L: alas 20 m, sisi kanan bawah 8 m, lekukan 8 m dan 4 m, sisi kiri 12 m.",
+  extra:"<p>Keliling bidang tanah Pak Boni adalah ….</p>",
+  options:["56 m","60 m","64 m","72 m"], key:2,
+  explain:"Jumlahkan semua sisi: 20 + 8 + 8 + 4 + 12 + 12 = <b>64 m</b>. (Sisi atas yang belum diketahui = 20 − 8 = 12 m.)" },
+
+{ n:21, type:"pg", elemen:"Bilangan", komp:"Operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah",
+  stem:"<p>Perpustakaan SD Cahaya mengadakan kegiatan “Ayo Membaca” untuk murid kelas 6. Peserta dari Kelas A sebanyak <b>24 siswa</b>, Kelas B <b>30 siswa</b>, dan Kelas C <b>26 siswa</b>. Setiap siswa mendapat <b>4 buah buku</b> bacaan.</p><p>Jika 1 dus berisi <b>20 buku</b>, berapa dus buku yang dibutuhkan?</p>",
+  options:["12 dus","14 dus","16 dus","20 dus"], key:2,
+  explain:"Jumlah siswa = 24 + 30 + 26 = 80 siswa. Buku yang dibutuhkan = 80 × 4 = 320 buku. Dus yang dibutuhkan = 320 ÷ 20 = <b>16 dus</b>." },
+
+{ n:22, type:"pg", elemen:"Bilangan", komp:"Pecahan senilai (pecahan, desimal, persen)",
+  stem:"<p>Pada kegiatan “Lari Sehat”, Andi, Beni, Citra, dan Dika menargetkan jarak lari yang sama, yaitu <b>8 km</b>. Hingga pukul 08.00 diperoleh data berikut:</p><p>• Andi telah menempuh <b>0,5 bagian</b> dari total jarak.<br/>• Beni telah menempuh <b>75%</b> dari total jarak.<br/>• Citra telah menempuh <b>3/8 bagian</b> dari total jarak.<br/>• Dika telah menempuh <b>5 km</b> dari total jarak.</p><p>Siapakah yang telah menempuh jarak sebesar <b>3/4 bagian</b> dari total jarak?</p>",
+  options:["Andi","Beni","Citra","Dika"], key:1,
+  explain:"3/4 = 0,75 = 75%. Andi 0,5 = 1/2; Citra 3/8; Dika 5/8. Yang sama dengan 3/4 adalah <b>Beni</b> (75%)." },
+
+{ n:23, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Bentuk bangun datar",
+  stem:"<p>Sebuah bangun datar memiliki sifat-sifat berikut:</p><p>1. Hanya memiliki <b>satu pasang</b> sisi yang sejajar.<br/>2. Sepasang sisi yang tidak sejajar (kakinya) <b>sama panjang</b>.<br/>3. Sudut-sudut pada alas yang sama <b>sama besar</b>.</p><p>Nama bangun datar tersebut adalah ….</p>",
+  options:["Jajar genjang","Persegi panjang","Trapesium sama kaki","Belah ketupat"], key:2,
+  explain:"Bangun dengan tepat satu pasang sisi sejajar adalah trapesium. Karena kakinya sama panjang dan sudut alasnya sama besar, bangun itu adalah <b>trapesium sama kaki</b>." },
+
+{ n:24, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Waktu (durasi kegiatan)",
+  stem:"<p>Pada hari Minggu, Rani mengikuti les berenang.</p><p>• Rani berangkat dari rumah pukul <b>08.10</b>.<br/>• Perjalanan ke kolam renang memerlukan waktu <b>35 menit</b>.<br/>• Les berenang berlangsung selama <b>1 jam 20 menit</b>.<br/>• Setelah les selesai, Rani beristirahat <b>15 menit</b> sebelum pulang.</p><p>Pukul berapakah Rani meninggalkan kolam renang untuk pulang?</p>",
+  options:["10.05","10.20","10.35","10.50"], key:1,
+  explain:"08.10 + 35 menit = 08.45 (tiba). 08.45 + 1 jam 20 menit = 10.05 (les selesai). 10.05 + 15 menit = <b>10.20</b>." },
+
+{ n:25, type:"pg", elemen:"Geometri dan Pengukuran", komp:"Panjang benda dan penaksiran ukuran",
+  stem:"<p>Di sebuah taman kota terdapat area parkir mobil seperti denah berikut. Panjang seluruh area parkir <b>30 meter</b> dan lebar tempat untuk satu mobil adalah <b>3 meter</b>. Saat ini ada <b>7 mobil</b> yang terparkir, lalu <b>satu mobil baru saja keluar</b>.</p>",
+  fig:"parking",
+  figcap:"Denah area parkir: panjang total 30 m, setiap mobil memerlukan lebar 3 m.",
+  extra:"<p>Berapa mobil lagi yang dapat diparkir di area tersebut sekarang?</p>",
+  options:["3 mobil","4 mobil","5 mobil","6 mobil"], key:1,
+  explain:"Kapasitas area = 30 ÷ 3 = 10 mobil. Setelah satu mobil keluar, yang terparkir tinggal 7 − 1 = 6 mobil. Tempat kosong = 10 − 6 = <b>4 mobil</b> lagi." },
+
+{ n:26, type:"kategori", elemen:"Geometri dan Pengukuran", komp:"Keliling dan luas persegi panjang",
+  stem:"<p><b>TAMAN KOTA</b> — Di taman kota tersedia lahan parkir motor berbentuk persegi panjang berukuran <b>10 m × 6 m</b>. Satu motor membutuhkan lahan parkir seluas <b>2 m²</b>.</p><p>Pada pukul 13.00, sebanyak <b>10 motor</b> memasuki area parkir dan dapat terparkir dengan rapi. Ternyata lahan parkir masih dapat menampung <b>1 motor lagi</b>.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Sebelum pukul 13.00, lahan parkir sudah terisi oleh 19 motor.",
+    "Lahan parkir motor dapat menampung paling banyak 25 motor.",
+    "Pada pukul 13.00 lahan parkir terisi oleh 28 motor."
+  ], key:[true,false,false],
+  explain:"Luas lahan = 10 × 6 = 60 m², kapasitas = 60 ÷ 2 = 30 motor. Pukul 13.00 lahan terisi 30 − 1 = 29 motor (C Salah). Sebelum 10 motor masuk, terisi 29 − 10 = 19 motor (A Benar). Kapasitasnya 30, bukan 25 (B Salah)." },
+
+{ n:27, type:"pg", elemen:"Bilangan", komp:"Menyatakan pecahan dalam bentuk persen",
+  stem:"<p><b>HOBI MEMBACA BUKU</b> — Danu, Antok, dan Caca setiap minggu membaca satu buku yang berbeda-beda. Gambar batang berikut menunjukkan bagian buku yang sudah dibaca Caca sampai hari Kamis: batang dibagi menjadi <b>4 bagian sama besar</b> dan <b>3 bagian</b> di antaranya sudah terarsir.</p>",
+  fig:"fracCaca",
+  figcap:"Bagian buku yang sudah dibaca Caca: 3 dari 4 bagian.",
+  extra:"<p>Berapa persen dari seluruh halaman buku yang sudah selesai dibaca oleh Caca?</p>",
+  options:["25%","50%","75%","80%"], key:2,
+  explain:"Bagian yang dibaca Caca = 3/4. Dalam persen: 3/4 × 100% = <b>75%</b>." },
+
+{ n:28, type:"kategori", elemen:"Bilangan", komp:"Operasi bilangan cacah, pecahan, dan desimal",
+  stem:"<p><b>HOBI MEMBACA BUKU</b> — Masih tentang Danu, Antok, dan Caca. Buku Danu berisi <b>250 halaman</b> dan ia sudah membaca <b>3/5</b> bagiannya. Buku Antok berisi <b>180 halaman</b> dan ia sudah membaca <b>2/3</b> bagiannya. Buku Caca berisi <b>300 halaman</b> dan ia sudah membaca <b>3/4</b> bagiannya.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Danu sudah membaca 150 halaman.",
+    "Antok sudah membaca 130 halaman.",
+    "Caca sudah membaca 225 halaman."
+  ], key:[true,false,true],
+  explain:"Danu: 3/5 × 250 = 150 halaman (A Benar). Antok: 2/3 × 180 = 120 halaman, bukan 130 (B Salah). Caca: 3/4 × 300 = 225 halaman (C Benar)." },
+
+{ n:29, type:"mcma", elemen:"Data", komp:"Menyajikan, menganalisis, dan menginterpretasi data dalam tabel",
+  stem:"<p><b>PROTEIN UNTUK ANAK</b> — Anak berusia 10–12 tahun membutuhkan protein paling sedikit <b>55 gram</b> dalam sehari. Tabel berikut menunjukkan kandungan protein setiap <b>100 gram</b> makanan.</p>",
+  fig:"tableProtein",
+  extra:"<p>Jika disediakan makanan berikut dengan berat masing-masing <b>250 gram</b>, makanan manakah yang dapat memenuhi kebutuhan protein harian anak? <b>Jawaban benar lebih dari satu.</b></p>",
+  options:["Daging sapi","Telur ayam","Ikan","Tempe"], key:[0,2],
+  explain:"Dalam 250 gram (2,5 × 100 gram): daging sapi = 2,5 × 26 = 65 gram ✓; telur = 2,5 × 13 = 32,5 gram ✗; ikan = 2,5 × 22 = 55 gram ✓ (tepat memenuhi); tempe = 2,5 × 19 = 47,5 gram ✗. Jadi jawabannya <b>daging sapi dan ikan</b>." },
+
+{ n:30, type:"kategori", elemen:"Data", komp:"Menyajikan, menganalisis, dan menginterpretasi data dalam tabel",
+  stem:"<p><b>PROTEIN UNTUK ANAK</b> — Ibu hamil perlu mengonsumsi <b>70–100 gram protein</b> dan <b>62–67 gram lemak</b> setiap hari. Seorang ibu hamil hari ini sudah mengonsumsi <b>60 gram protein</b> dan <b>50 gram lemak</b>. Kandungan setiap <b>50 gram</b> makanan: ikan mengandung <b>8 gram protein</b>, keju mengandung <b>15 gram lemak</b>, dan daging sapi mengandung <b>12 gram protein</b>.</p><p>Tentukan <b>Benar</b> atau <b>Salah</b> untuk setiap pernyataan berikut!</p>",
+  statements:[
+    "Ibu hamil dapat menambah konsumsi 50 gram ikan untuk memenuhi kebutuhan protein hariannya.",
+    "Ibu hamil dapat menambah konsumsi 50 gram keju untuk memenuhi kebutuhan lemak hariannya.",
+    "Ibu hamil dapat menambah konsumsi 50 gram daging sapi untuk memenuhi kebutuhan protein hariannya."
+  ], key:[false,true,true],
+  explain:"Protein + ikan: 60 + 8 = 68 gram, masih kurang dari 70 gram (A Salah). Lemak + keju: 50 + 15 = 65 gram, berada dalam rentang 62–67 gram (B Benar). Protein + daging sapi: 60 + 12 = 72 gram, berada dalam rentang 70–100 gram (C Benar)." }
+];
+
+/* ================= GAMBAR (SVG) ================= */
+var FIGS = {
+dice: '<svg width="240" height="170" viewBox="0 0 240 170" role="img" aria-label="Dadu dengan sisi atas 2 mata dan sisi depan 6 mata">'
+  + '<polygon points="70,30 150,30 190,70 110,70" fill="#fdf6d8" stroke="#8a6d1a" stroke-width="2"/>'
+  + '<polygon points="110,70 190,70 190,140 110,140" fill="#ffffff" stroke="#555" stroke-width="2"/>'
+  + '<polygon points="70,30 110,70 110,140 70,100" fill="#eef3ee" stroke="#555" stroke-width="2"/>'
+  + '<circle cx="95" cy="48" r="7" fill="#c0392b"/><circle cx="140" cy="52" r="7" fill="#c0392b"/>'
+  + '<circle cx="128" cy="88" r="6.5" fill="#1c2b26"/><circle cx="150" cy="88" r="6.5" fill="#1c2b26"/><circle cx="172" cy="88" r="6.5" fill="#1c2b26"/>'
+  + '<circle cx="128" cy="118" r="6.5" fill="#1c2b26"/><circle cx="150" cy="118" r="6.5" fill="#1c2b26"/><circle cx="172" cy="118" r="6.5" fill="#1c2b26"/>'
+  + '<text x="120" y="162" font-size="13" text-anchor="middle" fill="currentColor">Atas: 2 mata · Depan: 6 mata</text></svg>',
+chartKoperasi: '<svg width="420" height="260" viewBox="0 0 420 260" role="img" aria-label="Diagram batang pembeli koperasi: Senin 20, Selasa 35, Rabu 25, Kamis 40, Jumat 30">'
+  + '<line x1="50" y1="20" x2="50" y2="215" stroke="currentColor" stroke-width="1.5"/><line x1="50" y1="215" x2="400" y2="215" stroke="currentColor" stroke-width="1.5"/>'
+  + [0,10,20,30,40].map(function(v){var y=215-v*4.5;return '<line x1="50" y1="'+y+'" x2="400" y2="'+y+'" stroke="currentColor" opacity="0.15"/><text x="42" y="'+(y+4)+'" font-size="12" text-anchor="end" fill="currentColor">'+v+'</text>';}).join("")
+  + [["Senin",20],["Selasa",35],["Rabu",25],["Kamis",40],["Jumat",30]].map(function(d,i){var h=d[1]*4.5,x=78+i*66;return '<rect x="'+x+'" y="'+(215-h)+'" width="42" height="'+h+'" rx="3" fill="#0f6a5c"/><text x="'+(x+21)+'" y="'+(215-h-7)+'" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">'+d[1]+'</text><text x="'+(x+21)+'" y="236" font-size="13" text-anchor="middle" fill="currentColor">'+d[0]+'</text>';}).join("")
+  + '<text x="225" y="256" font-size="12" text-anchor="middle" fill="currentColor">Hari — Banyak pembeli (siswa)</text></svg>',
+pikto: (function(){
+  function books(n){var s="";for(var i=0;i<n;i++){s+='<rect x="'+(i*30)+'" y="2" width="24" height="17" rx="3" fill="#e8a020" stroke="#8a5c00" stroke-width="1.2"/><line x1="'+(i*30+12)+'" y1="2" x2="'+(i*30+12)+'" y2="19" stroke="#8a5c00" stroke-width="1.2"/>';}return s;}
+  function row(name,n,y){return '<text x="0" y="'+(y+15)+'" font-size="14" font-weight="700" fill="currentColor">'+name+'</text><g transform="translate(70,'+y+')">'+books(n)+'</g>';}
+  return '<svg width="330" height="86" viewBox="0 0 330 86" role="img" aria-label="Piktogram: Rani 4 gambar, Dedi 3 gambar, Sinta 5 gambar, satu gambar sama dengan 2 buku">'
+    + row("Rani",4,2) + row("Dedi",3,30) + row("Sinta",5,58)
+    + '</svg><div class="figcap" style="text-align:left">Keterangan: 1 gambar buku = 2 buku.</div>';
+})(),
+cake: (function(){
+  var shaded={0:1,2:1,5:1,7:1,10:1},cells="";
+  for(var r=0;r<3;r++){for(var c=0;c<4;c++){var idx=r*4+c;cells+='<rect x="'+(10+c*55)+'" y="'+(10+r*45)+'" width="55" height="45" fill="'+(shaded[idx]?"#7a4a21":"#f7d774")+'" stroke="#8a6d1a" stroke-width="1.5"/>';}}
+  return '<svg width="240" height="155" viewBox="0 0 240 155" role="img" aria-label="Loyang kue 12 potong, 5 potong berwarna cokelat gelap">'+cells+'</svg>';
+})(),
+lshape: '<svg width="300" height="210" viewBox="0 0 300 210" role="img" aria-label="Tanah berbentuk L dengan alas 20 meter, sisi kiri 12 meter, sisi kanan bawah 8 meter">'
+  + '<polygon points="50,30 230,30 230,130 170,130 170,180 50,180" fill="#dcefe2" stroke="#0f6a5c" stroke-width="2.5"/>'
+  + '<text x="140" y="198" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor">20 m</text>'
+  + '<text x="30" y="110" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" transform="rotate(-90 30 110)">12 m</text>'
+  + '<text x="248" y="85" font-size="14" font-weight="700" fill="currentColor">8 m</text>'
+  + '<text x="196" y="122" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">8 m</text>'
+  + '<text x="182" y="158" font-size="13" font-weight="700" fill="currentColor">4 m</text></svg>',
+parking: '<svg width="400" height="120" viewBox="0 0 400 120" role="img" aria-label="Denah area parkir sepanjang 30 meter terbagi petak-petak 3 meter">'
+  + '<rect x="20" y="30" width="360" height="55" fill="#eef3ee" stroke="currentColor" stroke-width="1.5"/>'
+  + [1,2,3,4,5,6,7,8,9].map(function(i){return '<line x1="'+(20+i*36)+'" y1="30" x2="'+(20+i*36)+'" y2="85" stroke="currentColor" stroke-width="1" opacity="0.5"/>';}).join("")
+  + [0,1,2,3,4,5].map(function(i){return '<rect x="'+(26+i*36)+'" y="42" width="24" height="32" rx="5" fill="#2563a8"/>';}).join("")
+  + '<text x="200" y="108" font-size="13" text-anchor="middle" fill="currentColor">Panjang total 30 m — setiap petak 3 m — 6 mobil terparkir setelah 1 mobil keluar</text></svg>',
+fracCaca: '<svg width="340" height="80" viewBox="0 0 340 80" role="img" aria-label="Batang dibagi 4 bagian, 3 bagian terarsir">'
+  + [0,1,2,3].map(function(i){return '<rect x="'+(20+i*75)+'" y="18" width="75" height="36" fill="'+(i<3?"#0f6a5c":"#ffffff")+'" stroke="currentColor" stroke-width="1.5"/>';}).join("")
+  + '<text x="170" y="70" font-size="13" text-anchor="middle" fill="currentColor">Buku Caca — bagian yang sudah dibaca berwarna hijau</text></svg>',
+tableProtein: '<table class="data"><tr><th>Makanan</th><th>Protein per 100 gram</th></tr>'
+  + '<tr><td>Daging sapi</td><td>26 gram</td></tr><tr><td>Telur ayam</td><td>13 gram</td></tr>'
+  + '<tr><td>Ikan</td><td>22 gram</td></tr><tr><td>Tempe</td><td>19 gram</td></tr></table>'
+};
+
+/* ================= MESIN CBT ================= */
+var DUR = 75*60;
+var state = { nama:"", kelas:"", sekolah:"", cur:0, answers:{}, ragu:{}, left:DUR, timerId:null, startedAt:null, finished:false };
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+function typeLabel(t){ return t==="pg" ? "Pilihan Ganda" : (t==="mcma" ? "PGK Pilihan Ganda Kompleks" : "PGK Kategori (Benar/Salah)"); }
+
+function isAnswered(q){
+  var a = state.answers[q.n];
+  if(a === undefined || a === null) return false;
+  if(q.type==="pg") return typeof a === "number";
+  if(q.type==="mcma") return Array.isArray(a) && a.length>0;
+  if(q.type==="kategori") return Array.isArray(a) && a.every(function(v){ return v===true||v===false; });
+  return false;
 }
-function ex(){
-  view("vExam");$("#wNama").textContent=S.nama;$("#wKelas").textContent="Kelas "+S.kelas;
-  clearInterval(tm);tick();tm=setInterval(tick,1000);draw();
-  window.onbeforeunload=e=>{e.preventDefault();e.returnValue=""};
+function answeredCount(){ return QUESTIONS.filter(isAnswered).length; }
+
+function scoreQuestion(q){
+  var a = state.answers[q.n];
+  if(!isAnswered(q)) return 0;
+  if(q.type==="pg") return a===q.key ? 1 : 0;
+  if(q.type==="mcma"){
+    var k = q.key.slice().sort(), s = a.slice().sort();
+    return (k.length===s.length && k.every(function(v,i){return v===s[i];})) ? 1 : 0;
+  }
+  if(q.type==="kategori"){
+    var ok=0; q.key.forEach(function(kv,i){ if(a[i]===kv) ok++; });
+    return ok / q.key.length;
+  }
+  return 0;
 }
+
+function renderQuestion(){
+  var q = QUESTIONS[state.cur];
+  var html = "";
+  html += '<div class="qmeta"><span class="badge">Soal '+q.n+' dari 30</span><span class="badge">'+esc(q.elemen)+'</span><span class="badge type">'+typeLabel(q.type)+'</span></div>';
+  html += '<div class="qstem">'+ q.stem +'</div>';
+  if(q.fig && FIGS[q.fig]){
+    html += '<div class="figbox">'+ FIGS[q.fig] + (q.figcap ? '<div class="figcap">'+esc(q.figcap)+'</div>' : '') +'</div>';
+  }
+  if(q.extra) html += '<div class="qstem">'+ q.extra +'</div>';
+
+  if(q.type==="pg"){
+    html += '<div class="opts" role="radiogroup" aria-label="Pilihan jawaban">';
+    q.options.forEach(function(op,i){
+      var sel = state.answers[q.n]===i;
+      html += '<label class="opt'+(sel?" sel":"")+'"><input type="radio" name="qopt" value="'+i+'"'+(sel?" checked":"")+' onchange="setPG('+q.n+','+i+')"/><span class="huruf">'+ "ABCD"[i] +'.</span><span>'+op+'</span></label>';
+    });
+    html += '</div>';
+  } else if(q.type==="mcma"){
+    var cur = state.answers[q.n] || [];
+    html += '<div class="opts">';
+    q.options.forEach(function(op,i){
+      var sel = cur.indexOf(i)>=0;
+      html += '<label class="opt'+(sel?" sel":"")+'"><input type="checkbox" value="'+i+'"'+(sel?" checked":"")+' onchange="setMCMA('+q.n+','+i+',this.checked)"/><span class="huruf">'+(i+1)+'.</span><span>'+op+'</span></label>';
+    });
+    html += '</div><p style="font-size:.88rem;color:var(--ink2)">Centang <b>semua</b> pernyataan yang benar.</p>';
+  } else if(q.type==="kategori"){
+    var curK = state.answers[q.n] || [null,null,null];
+    html += '<table class="bs"><tr><th style="text-align:left">Pernyataan</th><th>Benar</th><th>Salah</th></tr>';
+    q.statements.forEach(function(st,i){
+      html += '<tr><td><b>'+ "ABC"[i] +'.</b> '+st+'</td>'
+        + '<td class="c"><label><input type="radio" name="bs'+q.n+'_'+i+'" '+(curK[i]===true?"checked":"")+' onchange="setBS('+q.n+','+i+',true)"/></label></td>'
+        + '<td class="c"><label><input type="radio" name="bs'+q.n+'_'+i+'" '+(curK[i]===false?"checked":"")+' onchange="setBS('+q.n+','+i+',false)"/></label></td></tr>';
+    });
+    html += '</table>';
+  }
+
+  html += '<div class="qnav">'
+    + '<button class="btn btn-ghost btn-sm" onclick="goQ('+(state.cur-1)+')" '+(state.cur===0?"disabled":"")+'>← Sebelumnya</button>'
+    + '<span class="mid"><label class="ragu"><input type="checkbox" '+(state.ragu[q.n]?"checked":"")+' onchange="setRagu('+q.n+',this.checked)"/> Ragu-ragu</label></span>'
+    + (state.cur<QUESTIONS.length-1
+        ? '<button class="btn btn-primary btn-sm" onclick="goQ('+(state.cur+1)+')">Berikutnya →</button>'
+        : '<button class="btn btn-amber btn-sm" onclick="askFinish()">Kumpulkan ✓</button>')
+    + '</div>';
+  $("qcard").innerHTML = html;
+  renderNav();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function renderNav(){
+  var g = "";
+  QUESTIONS.forEach(function(q,i){
+    var cls = "navbtn" + (isAnswered(q)?" done":"") + (state.ragu[q.n]?" ragu":"") + (i===state.cur?" now":"");
+    g += '<button class="'+cls+'" onclick="goQ('+i+')" aria-label="Soal '+(i+1)+'">'+(i+1)+'</button>';
+  });
+  $("navgrid").innerHTML = g;
+  var c = answeredCount();
+  $("exam-count").textContent = "Terjawab "+c+"/30";
+  $("pbar").style.width = (c/30*100)+"%";
+}
+
+function goQ(i){ if(i<0||i>=QUESTIONS.length) return; state.cur=i; renderQuestion(); }
+function setPG(n,v){ state.answers[n]=v; renderQuestion(); }
+function setMCMA(n,v,on){
+  var a = state.answers[n] ? state.answers[n].slice() : [];
+  var ix = a.indexOf(v);
+  if(on && ix<0) a.push(v);
+  if(!on && ix>=0) a.splice(ix,1);
+  state.answers[n]=a; renderNav(); refreshOptStyles();
+}
+function setBS(n,i,val){
+  var a = state.answers[n] ? state.answers[n].slice() : [null,null,null];
+  a[i]=val; state.answers[n]=a; renderNav();
+}
+function setRagu(n,on){ state.ragu[n]=on; renderNav(); }
+function refreshOptStyles(){
+  document.querySelectorAll("#qcard .opt").forEach(function(el){
+    var inp = el.querySelector("input");
+    el.classList.toggle("sel", !!(inp && inp.checked));
+  });
+}
+document.addEventListener("change", function(e){
+  if(e.target && e.target.closest && e.target.closest("#qcard .opt")) refreshOptStyles();
+});
+
+/* ---------- Timer ---------- */
+function fmtT(s){ var m=Math.floor(s/60), d=s%60; return (m<10?"0":"")+m+":"+(d<10?"0":"")+d; }
 function tick(){
-  const r=Math.max(0,DUR*60-Math.floor((Date.now()-S.start)/1000));
-  const t=$("#timer");t.textContent=String(Math.floor(r/60)).padStart(2,"0")+":"+String(r%60).padStart(2,"0");
-  t.classList.toggle("low",r<300);
-  if(r<=0){clearInterval(tm);alert("Waktu habis. Jawaban dikumpulkan otomatis.");fin()}
+  state.left--;
+  var t = $("timer");
+  t.textContent = fmtT(Math.max(state.left,0));
+  t.classList.toggle("warn", state.left<=600 && state.left>300);
+  t.classList.toggle("danger", state.left<=300);
+  if(state.left===600) showModal("Waktu Tersisa 10 Menit","Waktu tinggal 10 menit. Periksa kembali soal yang belum dijawab atau masih ragu-ragu.", [{label:"Lanjut Mengerjakan", cls:"btn-primary", fn:null}]);
+  if(state.left===300) showModal("Waktu Tersisa 5 Menit","Waktu tinggal 5 menit. Segera selesaikan dan kumpulkan tryout-mu.", [{label:"Lanjut Mengerjakan", cls:"btn-primary", fn:null}]);
+  if(state.left<=0){ finishExam(true); }
 }
-function draw(){
-  const q=Q[S.cur],no=q.no,v=S.ans[no],s=SEC[q.t];
-  let b="";
-  if(q.t==="pg")b=q.o.map((o,i)=>`<label class="opt${v===i?" on":""}"><input type="radio" name="o" ${v===i?"checked":""} onchange="set(${i})"><b>${"ABCD"[i]}.</b><span>${fm(o)}</span></label>`).join("");
-  if(q.t==="bs")b=`<div class="bsr">${[[true,"Benar"],[false,"Salah"]].map(([x,t])=>`<label class="opt${v===x?" on":""}"><input type="radio" name="o" ${v===x?"checked":""} onchange="set(${x})">${t}</label>`).join("")}</div>`;
-  if(q.t==="jd")b=`<div class="pool">${OPT.map((o,i)=>`<span><b>${L[i]}.</b> ${fm(o)}</span>`).join("")}</div><label class="f" for="sel">Jawabanmu</label><select id="sel" onchange="set(this.value)"><option value="">Pilih huruf</option>${OPT.map((o,i)=>`<option value="${L[i]}" ${v===L[i]?"selected":""}>${L[i]}. ${esc(o)}</option>`).join("")}</select>`;
-  if(q.t==="is")b=`<label class="f" for="isi">Jawabanmu</label><input id="isi" type="text" autocomplete="off" value="${esc(v||"")}" oninput="set(this.value,1)">`;
-  $("#qcard").innerHTML=`<div class="meta"><span class="qno">Soal ${no} dari ${Q.length}</span><span class="chip" style="background:${COL[q.b]}">Bab ${q.b} ${BAB[q.b]}</span><span class="chip" style="background:var(--ink)">C${q.lv}</span><span>Bagian ${s[0]}. ${s[1]}</span></div><div class="pet">${s[2]}</div><div class="qt">${fm(q.q)}</div>${b}
-  <div class="act"><button class="btn sec" onclick="go(-1)" ${S.cur===0?"disabled":""}>Sebelumnya</button><button class="btn sec flag${S.flag[no]?" on":""}" onclick="flag()">${S.flag[no]?"Batalkan ragu-ragu":"Ragu-ragu"}</button><button class="btn" onclick="go(1)" ${S.cur===Q.length-1?"disabled":""}>Selanjutnya</button></div>`;
-  nav();
+
+/* ---------- Modal ---------- */
+function showModal(title, body, buttons){
+  var btns = buttons.map(function(b,i){ return '<button class="btn '+(b.cls||"btn-ghost")+'" data-mbtn="'+i+'">'+b.label+'</button>'; }).join("");
+  $("modal-root").innerHTML = '<div class="modalback"><div class="modal" role="dialog" aria-modal="true"><h3>'+title+'</h3><p>'+body+'</p><div class="row">'+btns+'</div></div></div>';
+  buttons.forEach(function(b,i){
+    document.querySelector('[data-mbtn="'+i+'"]').addEventListener("click", function(){
+      $("modal-root").innerHTML=""; if(b.fn) b.fn();
+    });
+  });
 }
-function nav(){
-  $("#ng").innerHTML=Q.map((q,i)=>{const a=S.ans[q.no];const has=a!==undefined&&a!=="";return `<button class="${S.flag[q.no]?"g":has?"a":""} ${i===S.cur?"c":""}" onclick="S.cur=${i};save();draw()" aria-label="Soal ${q.no}">${q.no}</button>`}).join("");
+function askFinish(){
+  var c = answeredCount();
+  var kurang = 30-c;
+  var body = kurang>0
+    ? "Kamu baru menjawab <b>"+c+" dari 30 soal</b>. Masih ada <b>"+kurang+" soal</b> yang belum dijawab tuntas dan akan dinilai 0. Yakin ingin mengumpulkan sekarang?"
+    : "Semua 30 soal sudah dijawab. Setelah dikumpulkan, jawaban tidak dapat diubah lagi. Yakin ingin mengumpulkan?";
+  showModal("Kumpulkan Tryout?", body, [
+    {label:"Belum, Kembali", cls:"btn-ghost", fn:null},
+    {label:"Ya, Kumpulkan", cls:"btn-amber", fn:function(){ finishExam(false); }}
+  ]);
 }
-function set(v,txt){
-  const no=Q[S.cur].no;if(v==="true")v=true;if(v==="false")v=false;
-  S.ans[no]=v;save();
-  if(txt)nav();else draw();
+
+/* ---------- Mulai & Selesai ---------- */
+$("f-jujur").addEventListener("change", function(){ $("btn-start").disabled = !this.checked; });
+$("btn-start").addEventListener("click", function(){
+  var nama = $("f-nama").value.trim(), kelas = $("f-kelas").value;
+  var err = $("start-err");
+  if(!nama){ err.textContent="Isi dulu nama lengkapmu."; err.classList.remove("hidden"); $("f-nama").focus(); return; }
+  if(!kelas){ err.textContent="Pilih dulu kelasmu."; err.classList.remove("hidden"); $("f-kelas").focus(); return; }
+  err.classList.add("hidden");
+  state.nama=nama; state.kelas=kelas; state.sekolah=$("f-sekolah").value.trim();
+  state.startedAt = Date.now();
+  $("screen-start").classList.add("hidden");
+  $("screen-exam").classList.remove("hidden");
+  $("exam-who").innerHTML = esc(nama) + " <span>· Kelas "+esc(kelas)+(state.sekolah ? " · "+esc(state.sekolah) : "")+"</span>";
+  renderQuestion();
+  state.timerId = setInterval(tick, 1000);
+});
+$("btn-finish").addEventListener("click", askFinish);
+
+function finishExam(auto){
+  if(state.finished) return;
+  state.finished = true;
+  if(state.timerId) clearInterval(state.timerId);
+  var usedSec = DUR - Math.max(state.left, 0);
+  var total=0, full=0, part=0, no=0;
+  QUESTIONS.forEach(function(q){
+    var s = scoreQuestion(q); total += s;
+    if(s===1) full++; else if(s>0) part++; else no++;
+  });
+  var nilai = Math.round((total/30*100)*10)/10;
+  $("screen-exam").classList.add("hidden");
+  $("screen-result").classList.remove("hidden");
+  $("res-title").textContent = "Hasil Tryout — "+state.nama;
+  $("res-sub").textContent = "Kelas "+state.kelas+(state.sekolah ? " · "+state.sekolah : "")+(auto ? " · Terkumpul otomatis karena waktu habis" : "");
+  $("res-score").textContent = (nilai % 1 === 0 ? nilai.toFixed(0) : nilai.toFixed(1)).replace(".", ",");
+  $("res-note").textContent = nilai>=85 ? "Luar biasa! Pemahamanmu sangat kuat. Pertahankan!" :
+    nilai>=70 ? "Bagus! Sebagian besar materi sudah kamu kuasai." :
+    nilai>=55 ? "Cukup baik. Pelajari lagi pembahasan soal yang belum tepat." :
+    "Jangan menyerah — baca pembahasan setiap soal, lalu coba lagi.";
+  $("res-benar").textContent = full;
+  $("res-sebagian").textContent = part;
+  $("res-salah").textContent = no;
+  $("res-waktu").textContent = Math.floor(usedSec/60)+" mnt "+(usedSec%60)+" dtk";
+  buildReview();
+  window.scrollTo({top:0});
+  state._nilai = nilai; state._usedSec = usedSec;
 }
-function flag(){const no=Q[S.cur].no;S.flag[no]=!S.flag[no];save();draw()}
-function go(d){S.cur=Math.min(Q.length-1,Math.max(0,S.cur+d));save();draw()}
-function empty(){return Q.filter(q=>{const a=S.ans[q.no];return a===undefined||a===""}).length}
-function selesai(){
-  const e=empty();
-  if(confirm(e?`Masih ada ${e} soal belum dijawab. Kumpulkan sekarang?`:"Kumpulkan jawaban sekarang?"))fin();
+
+function answerText(q){
+  var a = state.answers[q.n];
+  if(!isAnswered(q)) return "<i>tidak dijawab</i>";
+  if(q.type==="pg") return "<b>"+ "ABCD"[a] +".</b> "+q.options[a];
+  if(q.type==="mcma") return a.slice().sort().map(function(i){ return "Pernyataan "+(i+1)+": "+q.options[i]; }).join("<br/>");
+  if(q.type==="kategori") return q.statements.map(function(st,i){ return "<b>"+ "ABC"[i] +".</b> "+(a[i] ? "Benar" : "Salah")+" — "+st; }).join("<br/>");
+  return "";
 }
-const nz=s=>String(s).toLowerCase().replace(/\s+/g,"").replace(/^rp/,"").replace(/,/g,".");
-function ok(q){const a=S.ans[q.no];if(a===undefined||a==="")return false;
-  if(q.t==="is")return q.a.map(nz).includes(nz(a));return a===q.a}
-function key(q){return q.t==="pg"?"ABCD"[q.a]+". "+q.o[q.a]:q.t==="bs"?(q.a?"Benar":"Salah"):q.t==="jd"?q.a+". "+OPT[L.indexOf(q.a)]:q.show}
-function mine(q){const a=S.ans[q.no];if(a===undefined||a==="")return "(kosong)";
-  return q.t==="pg"?"ABCD"[a]+". "+q.o[a]:q.t==="bs"?(a?"Benar":"Salah"):q.t==="jd"?a+". "+OPT[L.indexOf(a)]:a}
-function hitung(){
-  const r={t:{pg:0,bs:0,jd:0,is:0},b:{1:0,2:0,3:0,4:0},n:0};
-  Q.forEach(q=>{if(ok(q)){r.t[q.t]++;r.b[q.b]++;r.n++}});
-  r.skor=Math.round(r.n/Q.length*1000)/10;return r;
+function keyText(q){
+  if(q.type==="pg") return "<b>"+ "ABCD"[q.key] +".</b> "+q.options[q.key];
+  if(q.type==="mcma") return q.key.map(function(i){ return "Pernyataan "+(i+1)+": "+q.options[i]; }).join("<br/>");
+  if(q.type==="kategori") return q.statements.map(function(st,i){ return "<b>"+ "ABC"[i] +".</b> "+(q.key[i] ? "Benar" : "Salah")+" — "+st; }).join("<br/>");
+  return "";
 }
-function fin(){
-  clearInterval(tm);window.onbeforeunload=null;
-  S.done=true;S.end=Date.now();const r=hitung();S.hasil=r;save();kirim(r);hasil();
+
+function buildReview(){
+  var html = '<div class="card"><h2>Pembahasan Semua Soal</h2><p style="color:var(--ink2);font-size:.93rem;margin:0">Bandingkan jawabanmu dengan kunci, lalu baca pembahasannya baik-baik.</p></div>';
+  QUESTIONS.forEach(function(q){
+    var s = scoreQuestion(q);
+    var cls = s===1 ? "ok" : (s>0 ? "part" : "no");
+    var status = s===1 ? "✓ Tepat" : (s>0 ? "◐ Tepat sebagian ("+Math.round(s*100)+"%)" : "✗ Belum tepat");
+    html += '<div class="reviewitem '+cls+'">'
+      + '<div class="qmeta"><span class="badge">Soal '+q.n+'</span><span class="badge">'+esc(q.elemen)+'</span><span class="badge type">'+typeLabel(q.type)+'</span><span class="badge">'+status+'</span></div>'
+      + '<div class="qstem">'+q.stem+'</div>'
+      + (q.fig && FIGS[q.fig] ? '<div class="figbox">'+FIGS[q.fig]+(q.figcap?'<div class="figcap">'+esc(q.figcap)+'</div>':'')+'</div>' : '')
+      + (q.extra ? '<div class="qstem">'+q.extra+'</div>' : '')
+      + '<p class="ansline"><span class="k">Jawabanmu:</span><br/>'+answerText(q)+'</p>'
+      + '<p class="ansline"><span class="k">Kunci jawaban:</span><br/>'+keyText(q)+'</p>'
+      + '<div class="explain"><b>Pembahasan:</b> '+q.explain+'</div>'
+      + '</div>';
+  });
+  $("review").innerHTML = html;
 }
-function hasil(){
-  const r=S.hasil||hitung();view("vRes");
-  const tot=t=>Q.filter(q=>q.t===t).length,tb=b=>Q.filter(q=>q.b===b).length;
-  $("#rs").innerHTML=`<div>${esc(S.nama)} · Kelas ${esc(S.kelas)}</div><div class="big">${String(r.skor).replace(".",",")}</div><div>${r.n} dari ${Q.length} soal benar</div>
-  <div class="sub">${Object.keys(SEC).map(t=>`<div>Bagian ${SEC[t][0]} · ${SEC[t][1]}<b>${r.t[t]}/${tot(t)}</b></div>`).join("")}</div>
-  <div class="sub">${Object.keys(BAB).map(b=>`<div style="border-left:5px solid ${COL[b]}">Bab ${b} ${BAB[b]}<b>${r.b[b]}/${tb(+b)}</b></div>`).join("")}</div>`;
-  $("#rv").innerHTML=Q.map(q=>{const o=ok(q);return `<div class="rv ${o?"ok":"no"}"><b>${q.no}.</b> <span class="chip" style="background:${COL[q.b]}">Bab ${q.b}</span> <span class="chip" style="background:var(--ink)">C${q.lv}</span> ${fm(q.q)}<br>Jawabanmu: <b>${fm(mine(q))}</b> ${o?"(benar)":"(salah)"}<br>Kunci: <b>${fm(key(q))}</b><div class="pm">${fm(q.p)}</div></div>`}).join("");
-}
-function kirim(r){
-  if(!SETORAN_URL)return;
-  try{fetch(SETORAN_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify({nama:S.nama,kelas:S.kelas,skor:r.skor,benar:r.n,waktu:new Date(S.end).toISOString(),jawaban:S.ans})})}catch(e){}
-}
-function unduh(){
-  const r=S.hasil,c=s=>'"'+String(s).replace(/"/g,'""')+'"';
-  const rows=[["Nama","Kelas","Skor","Benar","PG","Benar/Salah","Menjodohkan","Isian","Waktu selesai"],[S.nama,S.kelas,r.skor,r.n,r.t.pg,r.t.bs,r.t.jd,r.t.is,new Date(S.end).toLocaleString("id-ID")]];
-  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+rows.map(x=>x.map(c).join(",")).join("\n")],{type:"text/csv"}));
-  a.download="hasil_"+S.nama.replace(/\s+/g,"_")+".csv";a.click();
-}
-function baru(){if(confirm("Mulai untuk peserta baru? Hasil di perangkat ini akan dihapus.")){try{localStorage.removeItem(KEY)}catch(e){}S={ans:{},flag:{},cur:0};$("#nama").value="";$("#kelas").value="";view("vLogin")}}
-if(S.nama&&S.done)hasil();else if(S.nama&&S.start)ex();
+$("btn-review").addEventListener("click", function(){
+  var r = $("review");
+  var open = r.classList.toggle("hidden") === false;
+  this.textContent = open ? "Sembunyikan Pembahasan" : "Lihat Pembahasan";
+  if(open) r.scrollIntoView({behavior:"smooth"});
+});
+$("btn-retry").addEventListener("click", function(){ location.reload(); });
+$("btn-download").addEventListener("click", function(){
+  var lines = [];
+  lines.push("HASIL TRYOUT TKA MATEMATIKA SD — SIMULASI 2027");
+  lines.push("Nama: "+state.nama);
+  lines.push("Kelas: "+state.kelas+(state.sekolah ? " — "+state.sekolah : ""));
+  lines.push("Nilai: "+String(state._nilai).replace(".", ",")+" / 100");
+  lines.push("Waktu terpakai: "+Math.floor(state._usedSec/60)+" menit "+(state._usedSec%60)+" detik");
+  lines.push("");
+  QUESTIONS.forEach(function(q){
+    var s = scoreQuestion(q);
+    lines.push("Soal "+q.n+" ("+q.elemen+" — "+typeLabel(q.type)+"): "+(s===1?"Tepat":(s>0?"Tepat sebagian":"Belum tepat")));
+  });
+  var blob = new Blob([lines.join("\n")], {type:"text/plain;charset=utf-8"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "hasil-tryout-tka-"+state.nama.replace(/\s+/g,"-").toLowerCase()+".txt";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+});
 </script>
 </body>
 </html>
